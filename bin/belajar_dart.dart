@@ -115,21 +115,82 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // 5.2 Contoh konversi
 
+// void main() {
+//   // String -> int
+//   var eleven = int.parse('11');
+//   print(eleven.runtimeType);
+//
+//   // String -> double
+//   var elevenPointTwo = double.parse('11.2');
+//   print(elevenPointTwo.runtimeType);
+//
+//   // int -> String
+//   var elevenAsString = 11.toString();
+//   print(elevenAsString.runtimeType);
+//
+//   // double -> String
+//   var piAsString = 3.14159.toStringAsFixed(2); // String piAsString = '3.14'
+//   print(piAsString.runtimeType);
+// }
+//
+
+
+// 6. Strings
+
+// String singleQuote = 'Ini adalah String';
+// String doubleQuote = "Ini juga String";
+//
+// String digunakan untuk menyimpan data dalam bentuk teks.
+// String pada Dart dapat didefinisikan dengan menggunakan
+// tanda petik satu maupun petik dua.
+//
+// Contoh 1
+// void main() {
+//   print('"What do you think of Dart?" he asked');
+// }
+//
+// Dalam contoh 1 kita dapat menggunakan tanda petik secara bergantian,
+// khususnya jika kita memiliki teks yang mengandung tanda petik.
+
+// Contoh 2
+// print('"I think it's great!" I answered confidently');
+
+// Jika tanda petik seperti di atas kode akan menghasilkan eror,
+// solusinya ialah menggunakan bentuk seperti ini;
+
+// void main() {
+//   print('"I think it\'s great!" I answered confidently');
+// }
+
+// penggunaan (\) ini disebut escape string berfungsi untuk mengurangi ambiguitas dalam tanda petik.
+
+// contoh backslash lain
+// void main() {
+//   print("Windows path: C:\\Program Files\\Dart");
+// }
+
+// Fitur lain dari String adalah String interpolation di mana kita bisa memasukkan nilai dari variabel atau expression ke dalam string. Interpolation ini bisa kita terapkan dengan simbol $.
+
+// void main() {
+//   var name = 'Messi';
+//   print('Hello $name, nice to meet you.');
+//   print('1 + 1 = ${1 + 1}');
+// }
+
+// jika kita ingin menampilkan harga dalam dolar maka yang perlu kita lakukan ialah menambahkan backslash sebagai interpolation
+
+// contoh
+// void main() {
+//   print(r'Dia baru saja membeli komputer seharga $1,000.00');
+// }
+
+// Huruf ‘r’ sebelum String akan memberitahu Dart untuk menganggap String sebagai raw, yang berarti akan mengabaikan interpolation.
+
 void main() {
-  // String -> int
-  var eleven = int.parse('11');
-  print(eleven.runtimeType);
-
-  // String -> double
-  var elevenPointTwo = double.parse('11.2');
-  print(elevenPointTwo.runtimeType);
-
-  // int -> String
-  var elevenAsString = 11.toString();
-  print(elevenAsString.runtimeType);
-
-  // double -> String
-  var piAsString = 3.14159.toStringAsFixed(2); // String piAsString = '3.14'
-  print(piAsString.runtimeType);
+  print('Hi \u2665');
 }
 
+/// Output:
+/// Hi ♥
+//
+// Pada Dart Unicode ini dikenal dengan runes. Unicode mendefinisikan nilai numerik unik untuk setiap huruf, angka, dan simbol yang digunakan dalam semua sistem penulisan dunia. Cara umum untuk mengekspresikan unicode adalah \uXXXX, di mana XXXX adalah nilai heksadesimal 4 digit. Misalnya karakter hati (♥) adalah \u2665.
