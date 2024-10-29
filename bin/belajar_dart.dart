@@ -207,14 +207,116 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // Tanda ! di atas disebut dengan operator “not” atau “bang”.
 // true sama saja bernilai false.
 
+// void main() {
+//   if (true) {
+//     print("It's true");
+//   } else {
+//     print("It's False");
+//   }
+// }
+//
+// /// Output:
+// /// It's true
+
+
+// 8. Operators
+
+// 8.1 Operator Aritmatika
+
+// var firstNumber = 4;
+
+// Pada kode di atas kita menginstruksikan komputer untuk memasukkan nilai 4 ke dalam variabel firstNumber.
+
+// void main() {
+//   var firstNumber = 4;
+//   var secondNumber = 13;
+//   var sum = firstNumber + secondNumber;
+//   print(sum);
+// }
+
+// selain +, -, *, dan / terdapat ~/ sebagai pembagian, mengembalikan nilai int dan % modulo atau sisa hasil bagi.
+
+// contoh
+// void main() {
+//   print(5 + 2); // int add = 7
+//   print(5 - 2); // int subtract = 3
+//   print(5 * 2); // int multiply = 10
+//   print(5 / 2); // double divide = 2.5
+//   print(5 ~/ 2); // int intDivide = 2
+//   print(5 % 2); // int modulo = 1
+// }
+
+// Operator aritmatika pada pemrograman memiliki aturan yang sama dengan matematika.
+
+// contoh
+// print(2 + 4 * 2); // output: 10
+// print((1 + 3) * (4 - 2)); // output: 8
+
+// Dart mendukung increment dan decrement. Contohnya adalah seperti berikut:
+
+// var a = 0, b = 5;
+// a++;
+// b--;
+// print(a); // output = 1
+// print(b); // output = 4
+
+// Expression a++ di atas dapat diartikan dengan a = a + 1. Komputer akan mengambil nilai dari a kemudian menambahkan 1 lalu memasukkannya kembali ke variabel a. Bentuk increment lainnya adalah seperti berikut:
+
+// var c = 0;
+// c += 5;    // c = c + 5 atau c = 0 + 5
+// print(c);  // output 5
+
+// Operator ini juga bisa digunakan pada operator aritmatika lain seperti perkalian dan pembagian.
+
+// var d = 2;
+// d *= 3;   // d = d * 3 atau d = 2 * 3
+// print(d); // output = 6
+
+// 8.2 Operator Perbandingan
+
+// Operator	Deskripsi
+// ==	Sama dengan
+// !=	Tidak sama dengan
+// >	Lebih dari
+// <	Kurang dari
+// >=	Lebih dari sama dengan
+// <=	Kurang dari sama dengan
+
+// Contoh
+// void main() {
+//   if (2 <= 3) {
+//     print('Ya, 2 kurang dari sama dengan 3');
+//   } else {
+//     print("Anda salah");
+//   }
+// }
+//
+// /// Output:
+// /// Ya, 2 kurang dari sama dengan 3
+
+// 8.3 Operator logika
+
+// ||	OR
+// &&	AND
+// !	NOT
+//
+// Operator AND akan menghasilkan nilai true jika semua operand-nya bernilai true, sedangkan OR jika salah satu saja dari operand bernilai true maka operator akan mengembalikan nilai true. Contohnya seperti kode berikut.
 
 void main() {
-  if (true) {
-    print("It's true");
+  if (2 < 3 && 2 + 4 == 5) {
+    print('Untuk mencetak ini semua kondisi harus benar');
   } else {
-    print("It's False");
+    print(
+        '2 kurang dari 3, tapi 2 + 4 tidak sama dengan 5, maka ini akan tampil');
+  }
+
+  if (false || true || false) {
+    print('Ada satu nilai true');
+  } else {
+    print('Jika semuanya false, maka ini akan tampil');
   }
 }
 
 /// Output:
-/// It's true
+/// 2 kurang dari 3, tapi 2 + 4 tidak sama dengan 5, maka ini akan tampil
+/// Ada satu nilai true
