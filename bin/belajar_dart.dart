@@ -74,15 +74,15 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Jika kita menginisialisasi nilai var x secara langsung, editor akan menampilkan eror karena terjadi perubahan tipe data.
 
-import 'dart:io';
-
-void main() {
-  stdout.write('Nama Anda : ');
-  String name = stdin.readLineSync()!;
-  stdout.write('Usia Anda : ');
-  int age = int.parse(stdin.readLineSync()!);
-  print('Halo $name, usia Anda $age tahun');
-}
+// import 'dart:io';
+//
+// void main() {
+//   stdout.write('Nama Anda : ');
+//   String name = stdin.readLineSync()!;
+//   stdout.write('Usia Anda : ');
+//   int age = int.parse(stdin.readLineSync()!);
+//   print('Halo $name, usia Anda $age tahun');
+// }
 
 // Statement print() dan stdout.write() memiliki fungsi yang sama yaitu untuk
 // menampilkan suatu objek ke konsol
@@ -95,3 +95,41 @@ void main() {
 
 // tanda ! setelah stdin.readLineSync() untuk menandai bahwa input tidak akan
 // mengembalikan nilai null.
+
+
+// 5. Number
+
+// 5.1 Penjelasan
+
+// Tipe data Dart ada dua jenis yaitu : int dan double.
+// int adalah bilangan bulat,
+// double adalah bilangan desimal.
+//
+// var number = 2020;
+// var hex = 0xDEADBEEF;
+// var decimal = 1.2;
+// var pi = 3.14;
+// double withoutDecimal = 7; // Sama dengan double withoutDecimal = 7.0
+//
+// Int dan double adalah subtipe dari tipe data num
+
+// 5.2 Contoh konversi
+
+void main() {
+  // String -> int
+  var eleven = int.parse('11');
+  print(eleven.runtimeType);
+
+  // String -> double
+  var elevenPointTwo = double.parse('11.2');
+  print(elevenPointTwo.runtimeType);
+
+  // int -> String
+  var elevenAsString = 11.toString();
+  print(elevenAsString.runtimeType);
+
+  // double -> String
+  var piAsString = 3.14159.toStringAsFixed(2); // String piAsString = '3.14'
+  print(piAsString.runtimeType);
+}
+
