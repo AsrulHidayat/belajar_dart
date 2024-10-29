@@ -186,11 +186,35 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Huruf ‘r’ sebelum String akan memberitahu Dart untuk menganggap String sebagai raw, yang berarti akan mengabaikan interpolation.
 
+// void main() {
+//   print('Hi \u2665');
+// }
+//
+// /// Output:
+// /// Hi ♥
+//
+// Pada Dart Unicode ini dikenal dengan runes. Unicode mendefinisikan nilai numerik unik untuk setiap huruf, angka, dan simbol yang digunakan dalam semua sistem penulisan dunia. Cara umum untuk mengekspresikan unicode adalah \uXXXX, di mana XXXX adalah nilai heksadesimal 4 digit. Misalnya karakter hati (♥) adalah \u2665.
+
+// 7. Booleans
+
+// variabel boolean hanya bisa menyimpan dua nilai, yaitu true dan false.
+
+// bool alwaysTrue = true;
+// var alwaysFalse = false;
+// var notTrue = !true;
+// bool notFalse = !false;
+
+// Tanda ! di atas disebut dengan operator “not” atau “bang”.
+// true sama saja bernilai false.
+
+
 void main() {
-  print('Hi \u2665');
+  if (true) {
+    print("It's true");
+  } else {
+    print("It's False");
+  }
 }
 
 /// Output:
-/// Hi ♥
-//
-// Pada Dart Unicode ini dikenal dengan runes. Unicode mendefinisikan nilai numerik unik untuk setiap huruf, angka, dan simbol yang digunakan dalam semua sistem penulisan dunia. Cara umum untuk mengekspresikan unicode adalah \uXXXX, di mana XXXX adalah nilai heksadesimal 4 digit. Misalnya karakter hati (♥) adalah \u2665.
+/// It's true
