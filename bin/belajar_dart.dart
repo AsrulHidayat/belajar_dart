@@ -6,7 +6,7 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // }
 
 
-// 2
+// 2 Comments
 // /// Fungsi [main] akan menampilkan 2 output
 // /// Output pertama menampilkan teks dan output kedua menampilkan hasil perkalian pada fungsi [calculate]
 // void main(List<String> arguments) {
@@ -25,10 +25,73 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // /// 6 * 7 = 42
 
 
-// 3
+// 3 Variables
+// void main() {
+//   var myAge; myAge = 20;
+//   var greetings = 'Hello Dart!';
+//   print(greetings);
+//   print(myAge);
+// }
+
+
+// 4 Data Types
+
+// 4.1 nilai variabel dengan var akan secara otomatis menetukan tipe data
+
+// var greetings = 'Hello Dart!';  // String
+// var myAge = 20;                 // integers
+
+// Kode diatas secara otomatis komputer akan tahu bahwa variable greetings
+// memiliki nilai berupa String atau teks.
+
+// myAge bernilai angka atau integers meskipun kita tidak mendefinisikannya
+// lebih lanjut.
+
+// Agar memudahkan proses debugging sebaiknya kita deklerasikan tipe data
+// secara eksplisit.
+
+// contoh :
+// String greetings = 'Hello Dart!';
+// int myAge = 20;
+
+
+// 4.2 inisialisasi dimana x akan mendeteksi variabel
+
+// void main() {
+//   var x; // dynamic
+//   x = 7;
+//   x = 'Dart is great';
+//   print(x);
+// }
+
+// x diatas merupakan tipe dynamic. Dynamic bisa berisi tipe apa pun, maka tidak masalah jika kita mengubah nilai di dalamnya
+
+// void main() {
+//   var x = 7; // int
+//   x = 'Dart is great'; // Kesalahan assignment
+//   print(x);
+// }
+
+// Jika kita menginisialisasi nilai var x secara langsung, editor akan menampilkan eror karena terjadi perubahan tipe data.
+
+import 'dart:io';
+
 void main() {
-  var myAge; myAge = 20;
-  var greetings = 'Hello Dart!';
-  print(greetings);
-  print(myAge);
+  stdout.write('Nama Anda : ');
+  String name = stdin.readLineSync()!;
+  stdout.write('Usia Anda : ');
+  int age = int.parse(stdin.readLineSync()!);
+  print('Halo $name, usia Anda $age tahun');
 }
+
+// Statement print() dan stdout.write() memiliki fungsi yang sama yaitu untuk
+// menampilkan suatu objek ke konsol
+
+// print() akan mencetak baris baru setelah menampilkan sesuatu sehingga
+// selanjutnya Anda perlu memasukkan input pada baris baru.
+
+// stdout.write() hanya menampilkan objeknya saja dan ketika ada input atau
+// output baru lagi masih akan ditampilkan di baris yang sama.
+
+// tanda ! setelah stdin.readLineSync() untuk menandai bahwa input tidak akan
+// mengembalikan nilai null.
