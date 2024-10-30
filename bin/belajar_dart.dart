@@ -1,5 +1,7 @@
 import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
+// DART FUNDAMENTAL
+
 // 1
 // void main(List<String> arguments) {
 //   print('Hello world: ${belajar_dart.calculate()}!');
@@ -650,15 +652,68 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // contoh
 
-void main() {
-  final firstName = "Achmad";
-  final lastName = "Ilham";
-
-  //lastName = 'Angga';       // tidak bisa dilakukan pengubahan nilai
-
-  print('Hello $firstName $lastName');
-}
+// void main() {
+//   final firstName = "Achmad";
+//   final lastName = "Ilham";
+//
+//   //lastName = 'Angga';       // tidak bisa dilakukan pengubahan nilai
+//
+//   print('Hello $firstName $lastName');
+// }
 
 // Kita masih bisa menerima input dan menyimpannya pada variabel firstName dan lastName, namun nilai variabel tersebut tidak bisa diubah setelah diinisialisasi.
 
 // Immutable Variable : Variabel yang nilainya tidak bisa berubah
+
+
+// 14. Null Safety
+
+// Null = tidak yang tidak ada
+
+// contoh penggunaan
+// String favoriteFood = null;
+
+// Untuk menggunakan fitur null safety, kita perlu menggunakan versi Dart 2.12. Anda dapat menentukan versi Dart yang digunakan dengan mengubah berkas pubspec.yaml yang terdapat dalam project. Pastikan minimal versi sdk yang digunakan adalah versi 2.12.0.
+
+// environment:
+// sdk: '>=2.12.0 <3.0.0'
+
+// Dengan null safety, secara default sebuah variabel tidak bisa meilai null, kecuali kita mendeklarasikannya secara eksplisit.
+
+// int age = null;               // Compile error
+// String? favoriteFoomiliki d = null;
+
+// Tanda tanya (?) di atas menunjukkan bahwa variabel favoriteFood boleh memiliki nilai null (nullable). Sementara variabel age harus memiliki nilai angka dan tidak boleh null (non-nullable)
+
+// void main() {
+//   String? favoriteFood = null;
+//
+//   buyAMeal(favoriteFood); // Compile error
+// }
+//
+// void buyAMeal(String favoriteFood) {
+//   print('I bought a $favoriteFood');
+// }
+
+// Untuk mengakses atau menangani variabel null seperti di atas, ada beberapa cara yang bisa kita lakukan. Pertama, ubah parameter agar dapat menerima nilai null lalu lakukan pengecekan nilai null.
+
+// cara 1
+// void buyAMeal(String? favoriteFood) {
+//   if (favoriteFood == null) {
+//     print('Bought Nasi Goreng');
+//   } else {
+//     print('Bought $favoriteFood');
+//   }
+// }
+
+// cara 2
+void main() {
+  String? favoriteFood = 'Mie Ayam';
+
+  buyAMeal(favoriteFood!);      // disematkan bang operator supaya mengembalikan nilai non-null
+}
+
+void buyAMeal(String favoriteFood) {
+  print('I bought a $favoriteFood');
+}
+
