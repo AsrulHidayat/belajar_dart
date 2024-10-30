@@ -580,21 +580,21 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // contoh :
 
-var price = 300000;
-
-void main() {
-  var discount = checkDiscount(price);  // variabel price dapat diakses di main()
-  print('You need to pay: ${price - discount}');
-}
-
-num checkDiscount(num price) {
-  num discount = 0;
-  if (price >= 100000) {                // selain itu, ia dapat diakses juga di checkDiscount(),
-    discount = 10 / 100 * price;        // bahkan, di level pengondisian if.
-  }
-
-  return discount;
-}
+// var price = 300000;
+//
+// void main() {
+//   var discount = checkDiscount(price);  // variabel price dapat diakses di main()
+//   print('You need to pay: ${price - discount}');
+// }
+//
+// num checkDiscount(num price) {
+//   num discount = 0;
+//   if (price >= 100000) {                // selain itu, ia dapat diakses juga di checkDiscount(),
+//     discount = 10 / 100 * price;        // bahkan, di level pengondisian if.
+//   }
+//
+//   return discount;
+// }
 
 
 // Program di bawah ini adalah salah satu contoh kesalahan dalam memanggil variabel. Ia memanggil variabel discountApplied,
@@ -617,3 +617,48 @@ num checkDiscount(num price) {
 //
 //   return discount;
 // }
+
+
+// 13. Constants & Final
+
+// Constans berguna untuk menyimpan nilai yang tidak akan berubah selama program berjalan.
+
+// contoh nilai pi
+// const pi = 3.14;
+//
+// bisa juga
+// const num pi = 3.14;
+// untuk mendeteksi data lebih akurat
+
+// Contoh Penggunaan
+
+// const num pi = 3.14;
+//
+// void main() {
+//   var radius = 7;
+//   print(
+//       'Luas lingkaran dengan radius $radius = ${calculateCircleArea(radius)}');
+// }
+//
+// num calculateCircleArea(num radius) => pi * radius * radius;
+
+// opsi lain dari const adalah final untuk menghindari perubahan nilai variabel
+
+// const : Bersifat compile-time constants, artinya nilai tersebut harus sudah diketahui sebelum program dijalankan.
+
+// final : Nilainya masih bisa diinisialisasi ketika runtime atau ketika aplikasi berjalan.
+
+// contoh
+
+void main() {
+  final firstName = "Achmad";
+  final lastName = "Ilham";
+
+  //lastName = 'Angga';       // tidak bisa dilakukan pengubahan nilai
+
+  print('Hello $firstName $lastName');
+}
+
+// Kita masih bisa menerima input dan menyimpannya pada variabel firstName dan lastName, namun nilai variabel tersebut tidak bisa diubah setelah diinisialisasi.
+
+// Immutable Variable : Variabel yang nilainya tidak bisa berubah
