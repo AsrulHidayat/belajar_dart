@@ -427,16 +427,113 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // 10. Aplikasi Konversi Suhu
 
-import 'dart:io';
+// import 'dart:io';
+//
+// void main() {
+//   stdout.write('Masukkan suhu dalam Fahrenheit: ');
+//   var fahrenheit = num.parse(stdin.readLineSync()!);
+//
+//   var celsius = (fahrenheit - 32) * 5 / 9;
+//   print('$fahrenheit derajat Fahrenheit = $celsius derajat celsius');
+//
+// }
 
-void main() {
-  stdout.write('Masukkan suhu dalam Fahrenheit: ');
-  var fahrenheit = num.parse(stdin.readLineSync()!);
 
-  var celsius = (fahrenheit - 32) * 5 / 9;
-  print('$fahrenheit derajat Fahrenheit = $celsius derajat celsius');
+// 11. Functions
 
-}
+// Semua program Dart dimulai dari fungsi main()
+// main() adalah contoh fungsi utama yang selalu kita gunakan.
+
+// Fungsi print() akan mengambil nilai String atau objek lainnya dan menampilkannya ke konsol.
+
+// void main() {
+// print('Hello Dart!');
+// }
+
+// Untuk mendeklarasikan fungsi, caranya sama dengan penulisan fungsi main() yaitu dengan menentukan tipe nilai balik atau return value lalu nama fungsi dan parameter inputnya.
+
+//   returnType functionName(type param1, type param2, ...){
+//     return result;
+//   }
+
+// void main() {
+//   greet();
+// }
+//
+// void greet() {
+//   print('Hello!');
+// }
+
+// contoh dua parameter
+
+// void main() {
+//   greet('Dicoding', 2015);
+// }
+//
+// void greet(String name, int bornYear) {
+//   var age = 2023 - bornYear;
+//   print('Halo $name! Tahun ini Anda berusia $age tahun');
+// }
+//
+// /// Output:
+// /// Halo Dicoding! Tahun ini Anda berusia 8 tahun
+
+// Fungsi yang mengembalikan nilai ditandai dengan definisi return type selain void dan memiliki keyword return
+
+// void main() {
+//   var firstNumber = 7;
+//   var secondNumber = 10;
+//   print(
+//       'Rata-rata dari $firstNumber & $secondNumber adalah ${average(firstNumber, secondNumber)}');
+// }
+//
+// double average(num num1, num num2) {
+//   return (num1 + num2) / 2;
+// }
+//
+// /// Output:
+// /// Rata-rata dari 7 & 10 adalah 8.5
+
+// Jika fungsi hanya memiliki satu baris kode atau instruksi di dalamnya, maka bisa disingkat dengan anotasi =>. Ini juga dikenal dengan nama arrow syntax.
+
+// double average(num num1, num num2) => (num1 + num2) / 2;
+// void greeting() => print('Hello');
 
 
+// 11.1 Optional parameter
 
+// Optional parameter adalah Fungsi di mana kita tidak wajib mengisi parameter yang diminta oleh fungsi. Untuk bisa membuat parameter menjadi opsional, kita perlu memasukkannya ke dalam kurung siku.
+
+// contoh biasanya
+// void greetNewUser(String name, int age, bool isVerified)
+// greetNewUser('Widy', 20, true);
+
+// contoh dengan Optional parameter
+// void greetNewUser([String name, int age, bool isVerified])
+
+// Cara ini disebut dengan positional optional parameters.
+// Dengan optional parameter seperti di atas kita bisa memanggil fungsi seperti berikut:
+// //
+// // greetNewUser('Widy', 20, true);
+// // greetNewUser('Widy', 20);
+// // greetNewUser('Widy');
+// // greetNewUser();
+
+// Setiap parameter yang tidak dimasukkan akan memiliki nilai null. Namun sejak versi 2.12, Dart memiliki fitur null safety di mana suatu variabel secara default tidak bisa memiliki nilai null. Solusinya, kita bisa menambahkan tanda tanya (?) setelah tipe data supaya bisa menyimpan nilai null atau memberikan nilai parameter default. Nilai ini akan digunakan jika kita tidak memasukkan parameternya.
+
+// Contoh
+// void greetNewUser([String? name, int? age, bool isVerified = false]) {}
+//
+// greetNewUser(null, null, true);
+//
+// cara mengatasi dengan named optional parameters.
+// void greetNewUser({String? name, int? age, bool? isVerified})
+
+// greetNewUser(name: 'Widy', age: 20, isVerified: true);
+// greetNewUser(name: 'Widy', age: 20);
+// greetNewUser(age: 20);
+// greetNewUser(isVerified: true);
+
+// Perhatikan bahwa parameter ini bersifat opsional dan secara default akan bernilai null. Untuk memenuhi null safety, Anda bisa menggunakan cara seperti sebelumnya, atau menandai parameter wajib diisi dengan keyword required.
+//
+void greetNewUser({required String name, required int age, bool isVerified = false}) {}
