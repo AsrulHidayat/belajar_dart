@@ -302,21 +302,124 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 //
 // Operator AND akan menghasilkan nilai true jika semua operand-nya bernilai true, sedangkan OR jika salah satu saja dari operand bernilai true maka operator akan mengembalikan nilai true. Contohnya seperti kode berikut.
 
-void main() {
-  if (2 < 3 && 2 + 4 == 5) {
-    print('Untuk mencetak ini semua kondisi harus benar');
-  } else {
-    print(
-        '2 kurang dari 3, tapi 2 + 4 tidak sama dengan 5, maka ini akan tampil');
-  }
+// void main() {
+//   if (2 < 3 && 2 + 4 == 5) {
+//     print('Untuk mencetak ini semua kondisi harus benar');
+//   } else {
+//     print(
+//         '2 kurang dari 3, tapi 2 + 4 tidak sama dengan 5, maka ini akan tampil');
+//   }
+//
+//   if (false || true || false) {
+//     print('Ada satu nilai true');
+//   } else {
+//     print('Jika semuanya false, maka ini akan tampil');
+//   }
+// }
+//
+// /// Output:
+// /// 2 kurang dari 3, tapi 2 + 4 tidak sama dengan 5, maka ini akan tampil
+// /// Ada satu nilai true
 
-  if (false || true || false) {
-    print('Ada satu nilai true');
-  } else {
-    print('Jika semuanya false, maka ini akan tampil');
+
+// 9. Exceptions
+
+// 9.1 Try, on, dan catch
+
+// Exceptions adalah kondisi eror pada saat aplikasi berjalan (runtime)
+
+// contoh exception
+
+// void main() {
+//   var a = 7;
+//   var b = 0;
+//   print(a ~/ b);
+// }
+
+// ouput exception yang terjadi :
+//
+// Unhandled exception:
+// IntegerDivisionByZeroException
+// #0 int.~/ (dart:core-patch/integers.dart:24:7)
+// #1 main (file:///home/glot/main.dart:4:11)
+// #2 _startIsolate.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:305:32)
+// #3 _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:174:12)
+
+// Contoh di atas memperlihatkan menurut prinsip matematika kita tidak bisa \
+// membagi bilangan lain dengan bilangan nol (0)
+
+// Untuk menangani exception, mari gunakan try dan catch.
+
+// contoh try :
+//
+// void main() {
+//   try {
+//     var a = 7;
+//     var b = 0;
+//     print(a ~/ b);
+//   }
+// }
+
+// Diketahui exception sebelumnya adalah IntegerDivisionByZeroException maka kita dapat memanfaatkan  keyword on untuk mengatasi ketika exception tersebut terjadi.
+
+// void main() {
+//   try {
+//     var a = 7;
+//     var b = 0;
+//     print(a ~/ b);
+//   } on Exception {
+//     print('Can not divide by zero.');
+//   }
+// }
+
+// Untuk menangani exception yang tidak diketahui secara spesifik, kita bisa menggunakan keyword catch setelah blok try.
+
+// void main() {
+//   try {
+//     var a = 7;
+//     var b = 0;
+//     print(a ~/ b);
+//   } catch (e) {
+//     print('Exception happened: $e');
+//   }
+// }
+
+// try digunakan untuk mencoba menjalankan suatu blok kode yang mungkin menghasilkan error.
+
+// catch digunakan untuk menangkap error atau exception yang terjadi di dalam blok try, agar program tidak langsung berhenti dan Anda dapat mengatur apa yang harus dilakukan jika terjadi error.
+
+// on: Digunakan untuk menangani exception tertentu berdasarkan tipe, seperti FormatException, IOException, dan lainnya.
+
+// Exception happened: IntegerDivisionByZeroException
+// // atau
+// Unsupported operation: Result of truncating division is Infinity: 7 ~/ 0
+
+// void main() {
+//   try {
+//     var a = 7;
+//     var b = 0;
+//     print(a ~/ b);
+//   } catch (e, s) {
+//     print('Exception happened: $e');
+//     print('Stack trace: $s');
+//   }
+// }
+
+// kita dapat menambahkan satu parameter lagi dalam catch, Blok catch dapat digabungkan dengan on. Catch akan menangkap apabila tidak ada exception yang memenuhi blok on yang terpasang.
+
+// 9.2 finally
+
+void main() {
+  try {
+    var a = 7;
+    var b = 0;
+    print(a ~/ b);
+  } catch (e, s) {
+    print('Exception happened: $e');
+    print('Stack trace: $s');
+  } finally {
+    print('This line still executed');
   }
 }
 
-/// Output:
-/// 2 kurang dari 3, tapi 2 + 4 tidak sama dengan 5, maka ini akan tampil
-/// Ada satu nilai true
+// finally : Blok finally dapat digunakan setelah catch, untuk mengeksekusi kode yang ingin selalu dijalankan, baik terjadi error maupun tidak.
