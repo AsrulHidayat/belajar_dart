@@ -409,17 +409,34 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // 9.2 finally
 
-void main() {
-  try {
-    var a = 7;
-    var b = 0;
-    print(a ~/ b);
-  } catch (e, s) {
-    print('Exception happened: $e');
-    print('Stack trace: $s');
-  } finally {
-    print('This line still executed');
-  }
-}
+// void main() {
+//   try {
+//     var a = 7;
+//     var b = 0;
+//     print(a ~/ b);
+//   } catch (e, s) {
+//     print('Exception happened: $e');
+//     print('Stack trace: $s');
+//   } finally {
+//     print('This line still executed');
+//   }
+// }
 
 // finally : Blok finally dapat digunakan setelah catch, untuk mengeksekusi kode yang ingin selalu dijalankan, baik terjadi error maupun tidak.
+
+
+// 10. Aplikasi Konversi Suhu
+
+import 'dart:io';
+
+void main() {
+  stdout.write('Masukkan suhu dalam Fahrenheit: ');
+  var fahrenheit = num.parse(stdin.readLineSync()!);
+
+  var celsius = (fahrenheit - 32) * 5 / 9;
+  print('$fahrenheit derajat Fahrenheit = $celsius derajat celsius');
+
+}
+
+
+
