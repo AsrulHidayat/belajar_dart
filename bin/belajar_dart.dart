@@ -536,4 +536,84 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Perhatikan bahwa parameter ini bersifat opsional dan secara default akan bernilai null. Untuk memenuhi null safety, Anda bisa menggunakan cara seperti sebelumnya, atau menandai parameter wajib diisi dengan keyword required.
 //
-void greetNewUser({required String name, required int age, bool isVerified = false}) {}
+// void greetNewUser({required String name, required int age, bool isVerified = false}) {}
+
+
+// 12. Variable Scope
+
+// variable scope (lingkup variabel) adalah aturan yang menentukan di mana suatu variabel bisa diakses dalam kode. Lingkup variabel terbagi menjadi beberapa jenis berdasarkan lokasi deklarasi variabel tersebut.
+
+// contoh
+
+// void main() {
+//   var isAvailableForDiscount = true;
+//   var price = 300000;
+//   num discount = 0;
+//   if (isAvailableForDiscount) {
+//     discount = 10 / 100 * price;
+//   }
+//   print('You need to pay: ${price - discount}');
+// }
+
+// Pada kode di atas variabel discount masih bisa diakses dari dalam kode if karena masih berada di dalam satu scope fungsi main().
+
+// Contoh dipisah menjadi dua fungsi
+
+// void main() {
+//   var price = 300000;
+//   var discount = checkDiscount(price);
+//   print('You need to pay: ${price - discount}');
+// }
+//
+// num checkDiscount(num price) {
+//   num discount = 0;      // pembuatan variabel baru dengan scope lebih kecil
+//   if (price >= 100000) {
+//     discount = 10 / 100 * price;
+//   }
+//
+//   return discount;
+// }
+
+// Variabel discount dideklarasikan pada fungsi checkDiscount() sehingga memiliki scope pada fungsi tersebut saja. Nilainya akan berbeda dengan variabel discount pada fungsi main(). Saat variabel dideklarasikan pada suatu fungsi tertentu, ia hanya menjangkau di dalamnya saja karena cakupannya tidak bisa menjangkau ke fungsi lain.
+
+// beda dengan variabel yang dideklerasikan secara global.
+
+// contoh :
+
+var price = 300000;
+
+void main() {
+  var discount = checkDiscount(price);  // variabel price dapat diakses di main()
+  print('You need to pay: ${price - discount}');
+}
+
+num checkDiscount(num price) {
+  num discount = 0;
+  if (price >= 100000) {                // selain itu, ia dapat diakses juga di checkDiscount(),
+    discount = 10 / 100 * price;        // bahkan, di level pengondisian if.
+  }
+
+  return discount;
+}
+
+
+// Program di bawah ini adalah salah satu contoh kesalahan dalam memanggil variabel. Ia memanggil variabel discountApplied,
+
+// var price = 300000;
+//
+// void main() {
+//   var discount = checkDiscount(price);
+//   print('You need to pay: ${price - discount}');
+// }
+//
+// num checkDiscount(num price) {
+//   num discount = 0;
+//   if (!discountApplied) {            // pemanggilan variabel yang salah sehingga terjadi error
+//     if (price >= 100000) {
+//       discount = 10 / 100 * price;
+//       var discountApplied = true;    // proses deklarasi seharusnya terjadi sebelum pemanggilan variabel
+//     }
+//   }
+//
+//   return discount;
+// }
