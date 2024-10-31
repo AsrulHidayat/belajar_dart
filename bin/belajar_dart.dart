@@ -1429,21 +1429,91 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // contoh
 
-abstract class Bentuk {
-  void gambar(); // Metode abstrak
-}
+// abstract class Bentuk {
+//   void gambar(); // Metode abstrak
+// }
+//
+// class Lingkaran extends Bentuk {
+//   void gambar() {
+//     print('Menggambar Lingkaran');
+//   }
+// }
+//
+// void main() {
+//   Lingkaran lingkaran = Lingkaran();
+//   lingkaran.gambar(); // Output: Menggambar Lingkaran
+// }
 
-class Lingkaran extends Bentuk {
-  void gambar() {
-    print('Menggambar Lingkaran');
-  }
-}
+
+// 1. Class
+
+// Dalam pemrograman berorientasi objek (OOP), kelas (class) adalah blueprint atau cetak biru yang digunakan untuk membuat objek. Kelas mendefinisikan atribut (data) dan metode (fungsi) yang dimiliki oleh objek yang dibuat dari kelas tersebut. Dengan kata lain, kelas adalah struktur yang mendefinisikan sifat dan perilaku dari objek.
+
+// Contoh Kelas dalam Dart
+
+// class Mobil {
+//   // Atribut
+//   String merk;
+//   int tahun;
+//
+//   // Konstruktor
+//   Mobil(this.merk, this.tahun);
+//
+//   // Metode untuk menampilkan informasi mobil
+//   void informasi() {
+//     print('Merk: $merk, Tahun: $tahun');
+//   }
+// }
+//
+// void main() {
+//   // Membuat objek dari kelas Mobil
+//   Mobil mobil1 = Mobil('Toyota', 2020);
+//   Mobil mobil2 = Mobil('Honda', 2021);
+//
+//   // Mengakses metode dari objek
+//   mobil1.informasi(); // Output: Merk: Toyota, Tahun: 2020
+//   mobil2.informasi(); // Output: Merk: Honda, Tahun: 2021
+// }
+
+// Penjelasan Kode:
+// Deklarasi Kelas: class Mobil mendeklarasikan sebuah kelas bernama Mobil.
+// Atribut: Kelas Mobil memiliki dua atribut: merk dan tahun, yang menyimpan informasi tentang mobil.
+// Konstruktor: Mobil(this.merk, this.tahun) adalah konstruktor yang digunakan untuk menginisialisasi atribut ketika objek dibuat.
+// Metode: void informasi() adalah metode yang menampilkan informasi tentang mobil.
+// Membuat Objek: Dalam fungsi main(), kita membuat dua objek dari kelas Mobil, yaitu mobil1 dan mobil2.
+// Mengakses Metode: Kita memanggil metode informasi() untuk menampilkan informasi dari kedua objek.
+
+// Kapan Menggunakan Kelas?
+// Gunakan kelas ketika Anda ingin mendefinisikan jenis objek dengan atribut dan perilaku tertentu.
+// Kelas sangat berguna dalam pengembangan aplikasi besar yang memerlukan struktur dan organisasi yang baik.
 
 void main() {
-  Lingkaran lingkaran = Lingkaran();
-  lingkaran.gambar(); // Output: Menggambar Lingkaran
+  var dicodingCat = Animal('Gray', 2, 4.2);
+
+  dicodingCat.eat();
+  dicodingCat.poop();
+
+  print(dicodingCat.weight);
 }
 
+class Animal {
+  String name;
+  int age;
+  double weight;
 
+  Animal(this.name, this.age, this.weight);
 
+  void eat() {
+    print('$name is eating.');
+    weight = weight + 0.2;
+  }
 
+  void sleep() {
+    print('$name is sleeping.');
+  }
+
+  void poop() {
+    print('$name is pooping.');
+    weight = weight - 0.1;
+  }
+}
