@@ -1103,29 +1103,29 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // remove jika kita ingin menghapus data
 // contoh remove
 
-void main() {
-  List<String> stringList = [
-    "Programming",
-    "Hello",
-    "Dicoding",
-    "Dart",
-    "Flutter"
-  ];
-
-  // Menghapus list dengan nilai Programming
-  stringList.remove('Programming');
-
-  // Menghapus list pada index ke-1
-  // stringList.removeAt(1);
-
-  // Menghapus data list terakhir
-  // stringList.removeLast();
-
-  // Menghapus list mulai index ke-0 sampai ke-1 (indeks 2 masih dipertahankan)
-  // stringList.removeRange(0,2);
-
-  print(stringList);
-}
+// void main() {
+//   List<String> stringList = [
+//     "Programming",
+//     "Hello",
+//     "Dicoding",
+//     "Dart",
+//     "Flutter"
+//   ];
+//
+//   // Menghapus list dengan nilai Programming
+//   stringList.remove('Programming');
+//
+//   // Menghapus list pada index ke-1
+//   // stringList.removeAt(1);
+//
+//   // Menghapus data list terakhir
+//   // stringList.removeLast();
+//
+//   // Menghapus list mulai index ke-0 sampai ke-1 (indeks 2 masih dipertahankan)
+//   // stringList.removeRange(0,2);
+//
+//   print(stringList);
+// }
 
 // 1.1 Spread Operator
 
@@ -1178,4 +1178,71 @@ void main() {
 // }
 
 
+// 2. Set
+
+// Set adalah struktur data yang digunakan untuk menyimpan koleksi elemen yang unik dan tidak terurut. Elemen dalam set tidak dapat memiliki duplikasi, dan set biasanya tidak mempertahankan urutan elemen seperti list. Set digunakan ketika Anda perlu menyimpan data yang tidak boleh berulang dan ketika pencarian atau pengecekan keberadaan elemen lebih penting dibandingkan urutan.
+
+// contoh
+// void main() {
+//   Set<int> anotherSet = new Set.from([1, 4, 6, 4, 1]);
+//
+//   print(anotherSet);
+// }
+//
+// Set akan membuang angka yang sama.
+
+// contoh lengkap
+
+// void main() {
+//   // Mendeklarasikan set dengan tipe data String
+//   Set<String> buah = {"Apel", "Jeruk", "Pisang"};
+//
+//   // Menampilkan set
+//   print(buah); // Output: {Apel, Jeruk, Pisang}
+//
+//   // Menambahkan elemen baru ke set
+//   buah.add("Mangga");
+//   print(buah); // Output: {Apel, Jeruk, Pisang, Mangga}
+//
+//   // Mencoba menambahkan elemen duplikat
+//   buah.add("Apel"); // Tidak ada efek karena "Apel" sudah ada
+//   print(buah); // Output: {Apel, Jeruk, Pisang, Mangga}
+//
+//   // Menghapus elemen dari set
+//   buah.remove("Jeruk");
+//   print(buah); // Output: {Apel, Pisang, Mangga}
+//
+//   // Mengecek keberadaan elemen dalam set
+//   print(buah.contains("Pisang")); // Output: true
+//   print(buah.contains("Jeruk")); // Output: false
+//
+//   // Menghitung jumlah elemen dalam set
+//   print(buah.length); // Output: 3
+//
+//   // Mengonversi set menjadi list
+//   List<String> listBuah = buah.toList();
+//   print(listBuah); // Output: [Apel, Pisang, Mangga]
+// }
+
+
+// Deklarasi Set: Set<String> buah = {"Apel", "Jeruk", "Pisang"}; mendeklarasikan sebuah set bernama buah yang berisi tiga elemen bertipe String.
+// Menampilkan Set: Anda dapat mencetak set langsung untuk melihat isinya.
+// Menambahkan Elemen: Metode add() digunakan untuk menambahkan elemen baru. Jika elemen sudah ada, tidak ada perubahan yang terjadi.
+// Menghapus Elemen: Metode remove() digunakan untuk menghapus elemen tertentu dari set.
+// Mengecek Keberadaan Elemen: Metode contains() memeriksa apakah suatu elemen ada dalam set.
+// Menghitung Jumlah Elemen: buah.length memberikan jumlah elemen yang ada dalam set.
+// Mengonversi Set menjadi List: Anda dapat mengonversi set ke dalam list menggunakan metode toList().
+
+// Dart juga memiliki fungsi union dan intersection untuk mengetahui gabungan dan irisan dari 2 (dua) buah Set. Sebagai contoh:
+
+void main() {
+  var setA = {1, 2, 4, 5};
+  var setB = {1, 5, 7};
+
+  var union = setA.union(setB);
+  var intersection = setA.intersection(setB);
+
+  print("union: $union");
+  print("intersection: $intersection");
+}
 
