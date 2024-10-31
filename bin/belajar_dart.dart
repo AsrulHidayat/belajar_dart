@@ -1316,17 +1316,134 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Untuk menambahkan key-
 
-void main() {
-  var capital = {
-    'Jakarta': 'Indonesia',
-    'London': 'England',
-    'Tokyo': 'Japan',
-  };
+// void main() {
+//   var capital = {
+//     'Jakarta': 'Indonesia',
+//     'London': 'England',
+//     'Tokyo': 'Japan',
+//   };
+//
+//   capital['New Delhi'] = 'India';
+//
+//   print(capital);
+// }
+//
+// /// Output:
+// /// {Jakarta: Indonesia, London: England, Tokyo: Japan, New Delhi: India}
 
-  capital['New Delhi'] = 'India';
+// Terdapat beberapa properti yang tersedia pada Map, antara lain:
+// keys, untuk menampilkan seluruh key yang ada di dalam Map.
+// values, untuk mengetahui seluruh nilai yang ada di dalam Map.
+// clear(), untuk menghapus seluruh key-value yang ada di dalam Map.
+// Saat mengakses key yang tidak ada pada map, nilai variabel akan bernilai null.
 
-  print(capital);
+
+// PARADIGMA OBJECT ORIENTED PROGRAMMING (OOP)
+
+// Prinsip Utama OOP
+
+// a. Enkapsulasi - Encapsulation
+// Enkapsulasi adalah proses menyembunyikan detail internal dari objek dan hanya memberikan antarmuka yang diperlukan untuk berinteraksi dengan objek tersebut. Ini membantu menjaga integritas data dan mencegah modifikasi yang tidak diinginkan dari luar objek.
+
+// contoh
+
+// class Mobil {
+//   // Atribut privat
+//   String _merk;
+//   int _tahun;
+//
+//   // Konstruktor
+//   Mobil(this._merk, this._tahun);
+//
+//   // Metode publik untuk mendapatkan informasi
+//   String informasi() {
+//     return 'Merk: $_merk, Tahun: $_tahun';
+//   }
+// }
+
+// void main() {
+//   Mobil mobil = Mobil('Toyota', 2020);
+//   print(mobil.informasi()); // Output: Merk: Toyota, Tahun: 2020
+// }
+
+
+// b. pewarisan - inheritance
+
+// Enkapsulasi adalah proses menyembunyikan detail internal dari objek dan hanya memberikan antarmuka yang diperlukan untuk berinteraksi dengan objek tersebut. Ini membantu menjaga integritas data dan mencegah modifikasi yang tidak diinginkan dari luar objek.
+
+// class Mobil {
+//   // Atribut privat
+//   String _merk;
+//   int _tahun;
+//
+//   // Konstruktor
+//   Mobil(this._merk, this._tahun);
+//
+//   // Metode publik untuk mendapatkan informasi
+//   String informasi() {
+//     return 'Merk: $_merk, Tahun: $_tahun';
+//   }
+// }
+//
+// void main() {
+//   Mobil mobil = Mobil('Toyota', 2020);
+//   print(mobil.informasi()); // Output: Merk: Toyota, Tahun: 2020
+// }
+
+// c. Polimorfisme - Polymorphism
+
+// Polimorfisme adalah kemampuan untuk menggunakan satu antarmuka atau metode untuk berbagai jenis objek. Ini memungkinkan metode yang sama untuk berfungsi dengan cara yang berbeda berdasarkan objek yang memanggilnya.
+
+// Polymorphism dalam bahasa Yunani berarti “banyak bentuk.” Sederhananya objek dapat memiliki bentuk atau implementasi yang berbeda-beda pada satu metode yang sama. Semua hewan bernafas, namun tentu kucing dan ikan memiliki cara bernafas yang berbeda. Perbedaan bentuk atau cara pernafasan tersebut merupakan contoh dari polymorphism.
+
+// class Hewan {
+//   void suara() {
+//     print('Suara hewan');
+//   }
+// }
+//
+// class Kucing extends Hewan {
+//   void suara() {
+//     print('Meow');
+//   }
+// }
+//
+// class Anjing extends Hewan {
+//   void suara() {
+//     print('Bark');
+//   }
+// }
+//
+// void main() {
+//   Hewan hewan1 = Kucing();
+//   Hewan hewan2 = Anjing();
+//
+//   hewan1.suara(); // Output: Meow
+//   hewan2.suara(); // Output: Bark
+// }
+
+
+//  Abstraksi - Abstraction
+
+// Abstraksi adalah proses menyederhanakan kompleksitas dengan hanya menunjukkan fitur penting kepada pengguna. Ini bisa dicapai dengan menggunakan kelas abstrak atau antarmuka.
+
+// contoh
+
+abstract class Bentuk {
+  void gambar(); // Metode abstrak
 }
 
-/// Output:
-/// {Jakarta: Indonesia, London: England, Tokyo: Japan, New Delhi: India}
+class Lingkaran extends Bentuk {
+  void gambar() {
+    print('Menggambar Lingkaran');
+  }
+}
+
+void main() {
+  Lingkaran lingkaran = Lingkaran();
+  lingkaran.gambar(); // Output: Menggambar Lingkaran
+}
+
+
+
+
