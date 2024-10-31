@@ -903,11 +903,90 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Contoh Penggunaan continue:
 
+// void main() {
+//   for (int i = 0; i < 10; i++) {
+//     if (i % 2 == 0) {
+//       continue; // Lewati iterasi ini jika i adalah angka genap
+//     }
+//     print(i); // Mencetak nilai i hanya jika i adalah angka ganjil
+//   }
+// }
+
+
+// Switch and Case
+
+// switch digunakan untuk melakukan pengecekan banyak kondisi dengan lebih mudah dan ringkas.
+
+// Pernyataan switch memungkinkan Anda untuk menguji nilai dari suatu ekspresi (biasanya sebuah variabel) dan mengarahkan eksekusi ke blok kode yang sesuai dengan nilai tersebut.
+
+// switch (ekspresi) {
+// case nilai1:
+// // Kode yang dijalankan jika ekspresi == nilai1
+// break;
+// case nilai2:
+// // Kode yang dijalankan jika ekspresi == nilai2
+// break;
+// default:
+// // Kode yang dijalankan jika tidak ada case yang cocok
+// }
+
+// Setiap case dalam switch mencakup nilai yang ingin Anda uji. Ketika nilai dari ekspresi cocok dengan salah satu case, blok kode yang sesuai akan dieksekusi. Jika tidak ada case yang cocok, blok kode dalam default (jika ada) akan dijalankan.
+
+// contoh penggunaan
 void main() {
-  for (int i = 0; i < 10; i++) {
-    if (i % 2 == 0) {
-      continue; // Lewati iterasi ini jika i adalah angka genap
-    }
-    print(i); // Mencetak nilai i hanya jika i adalah angka ganjil
+  String hari = "Sabtu";
+
+  switch (hari) {
+    case "Senin":
+      print("Hari pertama dalam seminggu.");
+      break;
+    case "Selasa":
+      print("Hari kedua dalam seminggu.");
+      break;
+    case "Rabu":
+      print("Hari ketiga dalam seminggu.");
+      break;
+    case "Kamis":
+      print("Hari keempat dalam seminggu.");
+      break;
+    case "Jumat":
+      print("Hari kelima dalam seminggu.");
+      break;
+    case "Sabtu":
+      print("Hari keenam dalam seminggu.");
+      break;
+    case "Minggu":
+      print("Hari ketujuh dalam seminggu.");
+      break;
+    default:
+      print("Hari tidak valid.");
   }
 }
+
+// contoh lain
+// void main() {
+//   final firstNumber = 13;
+//   final secondNumber = 18;
+//   final operator = "+";
+//
+//   switch (operator) {
+//     case '+':
+//       print(
+//           '$firstNumber $operator $secondNumber = ${firstNumber + secondNumber}');
+//       break;
+//     case '-':
+//       print(
+//           '$firstNumber $operator $secondNumber = ${firstNumber - secondNumber}');
+//       break;
+//     case '*':
+//       print(
+//           '$firstNumber $operator $secondNumber = ${firstNumber * secondNumber}');
+//       break;
+//     case '/':
+//       print(
+//           '$firstNumber $operator $secondNumber = ${firstNumber / secondNumber}');
+//       break;
+//     default:
+//       print('Operator tidak ditemukan');
+//   }
+// }
