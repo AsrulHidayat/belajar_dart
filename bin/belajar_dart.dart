@@ -1664,17 +1664,105 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Jika objek dibuat dengan nilai yang tidak akan berubah (immutable), kita dapat menggunakan const constructor. Konstruktor ini menjadikan objek immutable dan tidak memungkinkan perubahan properties.
 
-class Titik {
-  final int x;
-  final int y;
+// class Titik {
+//   final int x;
+//   final int y;
+//
+//   // Const constructor
+//   const Titik(this.x, this.y);
+// }
+//
+// void main() {
+//   const Titik titik1 = Titik(3, 4);
+//   print('Titik (${titik1.x}, ${titik1.y})'); // Output: Titik (3, 4)
+// }
 
-  // Const constructor
-  const Titik(this.x, this.y);
-}
+
+// 5. Cascade Notation
+
+// Cascade Notation adalah fitur dalam Dart yang memungkinkan pemanggilan beberapa metode atau pengaturan beberapa properti pada objek yang sama secara berurutan tanpa harus mengulang variabel objeknya. Dengan cascade notation, kode menjadi lebih ringkas dan mudah dibaca. Cascade notation ditandai dengan dua titik (..) yang memungkinkan kita memanggil beberapa metode atau mengatur beberapa properti dalam satu ekspresi.
+
+// contoh tanpa casacade
+// class Mobil {
+//   String merk;
+//   int tahun;
+//
+//   void setMerk(String merk) {
+//     this.merk = merk;
+//   }
+//
+//   void setTahun(int tahun) {
+//     this.tahun = tahun;
+//   }
+//
+//   void informasi() {
+//     print('Merk: $merk, Tahun: $tahun');
+//   }
+// }
+//
+// void main() {
+//   Mobil mobil1 = Mobil();
+//   mobil1.setMerk('Toyota');
+//   mobil1.setTahun(2021);
+//   mobil1.informasi();
+// }
+
+// dengan cascade
+
+
+// void main() {
+//   Mobil mobil1 = Mobil()
+//     ..setMerk('Toyota')
+//     ..setTahun(2021)
+//     ..informasi(); // Output: Merk: Toyota, Tahun: 2021
+// }
+
+// Mengatur Properti dengan Cascade Notation
+
+// class Mobil {
+//   String merk;
+//   int tahun;
+//
+//   void informasi() {
+//     print('Merk: $merk, Tahun: $tahun');
+//   }
+// }
+//
+// void main() {
+//   Mobil mobil1 = Mobil()
+//     ..merk = 'Honda'
+//     ..tahun = 2022
+//     ..informasi(); // Output: Merk: Honda, Tahun: 2022
+// }
+
+// contoh lain
+
+import 'animal.dart';
 
 void main() {
-  const Titik titik1 = Titik(3, 4);
-  print('Titik (${titik1.x}, ${titik1.y})'); // Output: Titik (3, 4)
+  var dicodingCat = Animal('', 2, 4.2)
+    ..name = 'Gray'
+    ..eat();
 }
 
+class Animal {
+  String name = '';
+  int age = 0;
+  double weight = 0;
 
+  Animal(this.name, this.age, this.weight);
+
+  void eat() {
+    print('$name is eating.');
+    weight = weight + 0.2;
+  }
+
+  void sleep() {
+    print('$name is sleeping.');
+  }
+
+  void poop() {
+    print('$name is pooping.');
+    weight = weight - 0.1;
+  }
+}
