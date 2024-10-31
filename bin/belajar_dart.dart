@@ -1235,14 +1235,98 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Dart juga memiliki fungsi union dan intersection untuk mengetahui gabungan dan irisan dari 2 (dua) buah Set. Sebagai contoh:
 
+// void main() {
+//   var setA = {1, 2, 4, 5};
+//   var setB = {1, 5, 7};
+//
+//   var union = setA.union(setB);
+//   var intersection = setA.intersection(setB);
+//
+//   print("union: $union");
+//   print("intersection: $intersection");
+// }
+
+
+// 3. Map
+
+// Map adalah struktur data yang menyimpan pasangan kunci-nilai (key-value pairs). Dalam Map, setiap kunci harus unik, tetapi nilai yang terkait dengan kunci tersebut dapat duplikat. Map sering digunakan ketika Anda ingin mengasosiasikan data yang berbeda atau mengakses data dengan cara yang efisien berdasarkan kunci.
+
+// void main() {
+//   // Mendeklarasikan map dengan tipe data String sebagai kunci dan int sebagai nilai
+//   Map<String, int> umur = {
+//     "Asrul": 21,
+//     "Dika": 22,
+//     "Budi": 23
+//   };
+//
+//   // Menampilkan map
+//   print(umur); // Output: {Asrul: 21, Dika: 22, Budi: 23}
+//
+//   // Mengakses nilai menggunakan kunci
+//   print(umur["Asrul"]); // Output: 21
+//
+//   // Menambahkan pasangan kunci-nilai baru ke map
+//   umur["Rina"] = 20;
+//   print(umur); // Output: {Asrul: 21, Dika: 22, Budi: 23, Rina: 20}
+//
+//   // Mengubah nilai untuk kunci yang sudah ada
+//   umur["Dika"] = 25;
+//   print(umur); // Output: {Asrul: 21, Dika: 25, Budi: 23, Rina: 20}
+//
+//   // Menghapus pasangan kunci-nilai dari map
+//   umur.remove("Budi");
+//   print(umur); // Output: {Asrul: 21, Dika: 25, Rina: 20}
+//
+//   // Mengecek keberadaan kunci dalam map
+//   print(umur.containsKey("Rina")); // Output: true
+//   print(umur.containsKey("Budi")); // Output: false
+//
+//   // Menghitung jumlah pasangan kunci-nilai dalam map
+//   print(umur.length); // Output: 3
+//
+//   // Mendapatkan semua kunci dari map
+//   print(umur.keys); // Output: (Asrul, Dika, Rina)
+//
+//   // Mendapatkan semua nilai dari map
+//   print(umur.values); // Output: (21, 25, 20)
+// }
+
+// Deklarasi Map: Map<String, int> umur = {...}; mendeklarasikan sebuah map bernama umur yang memiliki kunci bertipe String dan nilai bertipe int.
+// Menampilkan Map: Anda dapat mencetak map langsung untuk melihat isinya.
+// Mengakses Nilai: Anda dapat mengakses nilai menggunakan kunci dengan sintaks umur["Asrul"].
+// Menambahkan Pasangan Kunci-Nilai: Anda dapat menambahkan entri baru dengan menetapkan nilai untuk kunci baru.
+// Mengubah Nilai: Anda dapat mengubah nilai yang terkait dengan kunci yang sudah ada.
+// Menghapus Pasangan Kunci-Nilai: Metode remove() digunakan untuk menghapus entri berdasarkan kunci.
+// Mengecek Keberadaan Kunci: Metode containsKey() memeriksa apakah suatu kunci ada dalam map.
+// Menghitung Jumlah Enti: umur.length memberikan jumlah pasangan kunci-nilai yang ada dalam map.
+// Mendapatkan Kunci dan Nilai: Anda dapat menggunakan keys untuk mendapatkan semua kunci dan values untuk mendapatkan semua nilai dari map.
+//
+// Kapan Menggunakan Map?
+// Gunakan map ketika Anda perlu menyimpan data dalam bentuk pasangan kunci-nilai.
+// Map sangat berguna ketika Anda ingin melakukan pencarian berdasarkan kunci dengan cepat, seperti mengasosiasikan nama dengan umur, ID dengan informasi pengguna, dan lain-lain.
+
+// Kita dapat menampilkan key apa saja yang ada di dalam Map dengan menggunakan property keys. Sedangkan untuk mengetahui nilai apa saja yang ada di dalam Map kita bisa menggunakan property values.
+
+// var mapKeys = capital.keys;
+// print("mapKeys: $mapKeys");
+//
+// var mapValues = capital.values;
+// print("mapValues: $mapValues");
+// }
+
+// Untuk menambahkan key-
+
 void main() {
-  var setA = {1, 2, 4, 5};
-  var setB = {1, 5, 7};
+  var capital = {
+    'Jakarta': 'Indonesia',
+    'London': 'England',
+    'Tokyo': 'Japan',
+  };
 
-  var union = setA.union(setB);
-  var intersection = setA.intersection(setB);
+  capital['New Delhi'] = 'India';
 
-  print("union: $union");
-  print("intersection: $intersection");
+  print(capital);
 }
 
+/// Output:
+/// {Jakarta: Indonesia, London: England, Tokyo: Japan, New Delhi: India}
