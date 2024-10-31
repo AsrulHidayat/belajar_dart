@@ -933,35 +933,35 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // Setiap case dalam switch mencakup nilai yang ingin Anda uji. Ketika nilai dari ekspresi cocok dengan salah satu case, blok kode yang sesuai akan dieksekusi. Jika tidak ada case yang cocok, blok kode dalam default (jika ada) akan dijalankan.
 
 // contoh penggunaan
-void main() {
-  String hari = "Sabtu";
-
-  switch (hari) {
-    case "Senin":
-      print("Hari pertama dalam seminggu.");
-      break;
-    case "Selasa":
-      print("Hari kedua dalam seminggu.");
-      break;
-    case "Rabu":
-      print("Hari ketiga dalam seminggu.");
-      break;
-    case "Kamis":
-      print("Hari keempat dalam seminggu.");
-      break;
-    case "Jumat":
-      print("Hari kelima dalam seminggu.");
-      break;
-    case "Sabtu":
-      print("Hari keenam dalam seminggu.");
-      break;
-    case "Minggu":
-      print("Hari ketujuh dalam seminggu.");
-      break;
-    default:
-      print("Hari tidak valid.");
-  }
-}
+// void main() {
+//   String hari = "Sabtu";
+//
+//   switch (hari) {
+//     case "Senin":
+//       print("Hari pertama dalam seminggu.");
+//       break;
+//     case "Selasa":
+//       print("Hari kedua dalam seminggu.");
+//       break;
+//     case "Rabu":
+//       print("Hari ketiga dalam seminggu.");
+//       break;
+//     case "Kamis":
+//       print("Hari keempat dalam seminggu.");
+//       break;
+//     case "Jumat":
+//       print("Hari kelima dalam seminggu.");
+//       break;
+//     case "Sabtu":
+//       print("Hari keenam dalam seminggu.");
+//       break;
+//     case "Minggu":
+//       print("Hari ketujuh dalam seminggu.");
+//       break;
+//     default:
+//       print("Hari tidak valid.");
+//   }
+// }
 
 // contoh lain
 // void main() {
@@ -990,3 +990,192 @@ void main() {
 //       print('Operator tidak ditemukan');
 //   }
 // }
+
+// void main() {
+//   var x = 11;
+//   if (x * 2 + 1 < 23 && x % 2 == 1) {
+//     print('x');
+//   } else if (x != 0) {
+//     print('y');
+//   } else {
+//     print('z');
+//   }
+// }
+
+// import 'dart:io';
+// void main() {
+//   for (int i = 1; i <= 3; i++) {
+//     for (int j = 1; j <= i; j++) {
+//       stdout.write(j);
+//     }
+//   }
+// }
+
+
+// COLLECTIONS
+
+// 1. List
+
+// List adalah struktur data yang digunakan untuk menyimpan koleksi elemen atau item dalam urutan tertentu. List dapat menyimpan berbagai jenis data, seperti angka, string, objek, dan bahkan list lain. Struktur data ini sangat berguna karena memungkinkan pengorganisasian dan pengelolaan data dengan cara yang fleksibel dan efisien.
+
+// Contoh penulisan
+// List<int> numberList = [1, 2, 3, 4, 5];
+
+// Kode di atas adalah contoh dari satu objek List yang berisi kumpulan data dengan tipe integer. Karena kompiler bisa mengetahui tipe data yang ada dalam sebuah objek List, maka tak perlu kita menuliskannya secara eksplisit.
+//
+// var numberList = [1, 2, 3, 4, 5];
+// var stringList = ['Hello', 'Dicoding', 'Dart'];'
+
+// void main() {
+//   List dynamicList = [1, 'Dicoding', true];
+//   print(dynamicList.runtimeType);
+// }
+
+// contoh lainnya
+// void main() {
+//   // Mendeklarasikan list dengan tipe data String
+//   List<String> buah = ["Apel", "Jeruk", "Pisang"];
+//
+//   // Menampilkan list
+//   print(buah); // Output: [Apel, Jeruk, Pisang]
+//
+//   // Mengakses elemen berdasarkan indeks
+//   print(buah[0]); // Output: Apel
+//
+//   // Menambahkan elemen baru ke list
+//   buah.add("Mangga");
+//   print(buah); // Output: [Apel, Jeruk, Pisang, Mangga]
+//
+//   // Menghapus elemen dari list
+//   buah.remove("Jeruk");
+//   print(buah); // Output: [Apel, Pisang, Mangga]
+//
+//   // Mengubah elemen berdasarkan indeks
+//   buah[1] = "Kiwi";
+//   print(buah); // Output: [Apel, Kiwi, Mangga]
+//
+//   // Menghitung jumlah elemen dalam list
+//   print(buah.length); // Output: 3
+// }
+
+// Deklarasi List: List<String> buah = ["Apel", "Jeruk", "Pisang"]; mendeklarasikan sebuah list bernama buah yang berisi tiga elemen bertipe String.
+// Mengakses Elemen: Anda dapat mengakses elemen dalam list menggunakan indeks. Misalnya, buah[0] akan mengembalikan "Apel".
+// Menambahkan Elemen: Metode add() digunakan untuk menambahkan elemen baru ke akhir list.
+// Menghapus Elemen: Metode remove() digunakan untuk menghapus elemen tertentu dari list.
+// Mengubah Elemen: Anda dapat mengubah elemen di posisi tertentu dengan menetapkan nilai baru pada indeks tersebut.
+// Menghitung Jumlah Elemen: buah.length memberikan jumlah elemen yang ada dalam list.
+
+// pemanfaatan di perulangan, contoh
+
+// void main() {
+//   List<String> stringList = ["Hello", "Dicoding", "Dart"];
+//   for (int i = 0; i < stringList.length; i++) {
+//     print(stringList[i]);
+//   }
+// }
+
+// Untuk menambahkan data ke dalam list, kita bisa menggunakan fungsi add().
+
+// contoh add:
+
+// void main() {
+//   List<String> stringList = ["Hello", "Dicoding", "Dart"];
+//
+//   // Menambahkan data di akhir list.
+//   stringList.add('Flutter');
+//
+//   print(stringList);
+// }
+
+// Fungsi add ini akan menambahkan data di akhir list.
+
+// Lalu bagaimana jika kita ingin menambahkan data namun tidak di akhir List? Jawabannya adalah dengan fungsi insert. Di dalam fungsi insert kita perlu memasukkan 2 parameter, yaitu indeks list dan data yang akan dimasukkan.
+
+// contoh insert
+
+// void main() {
+//   List<String> stringList = ["Hello", "Dicoding", "Dart", "Flutter"];
+//   // Menambahkan data di indeks ke-0.
+//   stringList.insert(0, 'Programming');
+//   print(stringList);
+// }
+
+// remove jika kita ingin menghapus data
+// contoh remove
+
+void main() {
+  List<String> stringList = [
+    "Programming",
+    "Hello",
+    "Dicoding",
+    "Dart",
+    "Flutter"
+  ];
+
+  // Menghapus list dengan nilai Programming
+  stringList.remove('Programming');
+
+  // Menghapus list pada index ke-1
+  // stringList.removeAt(1);
+
+  // Menghapus data list terakhir
+  // stringList.removeLast();
+
+  // Menghapus list mulai index ke-0 sampai ke-1 (indeks 2 masih dipertahankan)
+  // stringList.removeRange(0,2);
+
+  print(stringList);
+}
+
+// 1.1 Spread Operator
+
+// Spread operator adalah fitur dalam beberapa bahasa pemrograman, termasuk Dart, yang digunakan untuk mengekspansi elemen dari koleksi seperti list atau map.ni memungkinkan Anda untuk menyalin elemen dari satu koleksi ke koleksi lain atau untuk menggabungkan beberapa koleksi menjadi satu koleksi dengan cara yang lebih ringkas dan mudah dibaca.
+//
+// Penggunaan Spread Operator di Dart
+// Dalam Dart, spread operator ditandai dengan tanda .... Ini memungkinkan Anda untuk menyebarkan elemen dari list atau map ke dalam list atau map lain.
+
+// contoh menyebarkan elemen list
+
+// void main() {
+//   List<int> angka1 = [1, 2, 3];
+//   List<int> angka2 = [4, 5, 6];
+//
+//   // Menggunakan spread operator untuk menggabungkan dua list
+//   List<int> gabungan = [...angka1, ...angka2];
+//
+//   print(gabungan); // Output: [1, 2, 3, 4, 5, 6]
+// }
+
+// Contoh Menyalin List
+
+// void main() {
+//   List<String> buah = ["Apel", "Jeruk", "Pisang"];
+//
+//   // Menggunakan spread operator untuk menyalin list
+//   List<String> salinanBuah = [...buah];
+//
+//   print(salinanBuah); // Output: [Apel, Jeruk, Pisang]
+// }
+
+// Contoh Menyebarkan Elemen ke Dalam List
+
+// void main() {
+//   List<String> buah = ["Apel", "Jeruk"];
+//
+//   // Menambahkan lebih banyak elemen menggunakan spread operator
+//   buah = [...buah, "Pisang", "Mangga"];
+//
+//   print(buah); // Output: [Apel, Jeruk, Pisang, Mangga]
+// }
+
+// lainnya
+
+// void main() {
+//   var favorites = ['Seafood', 'Salad', 'Nugget', 'Soup'];
+//   var others = ['Cake', 'Pie', 'Donut'];
+//   var allFavorites = [...favorites, ...others];
+//   print(allFavorites);
+// }
+
+
+
