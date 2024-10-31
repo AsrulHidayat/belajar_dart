@@ -801,11 +801,11 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 //challange
 
-void main() {
-  for (int i = 1; i <= 10; i++) {
-    print('*' * i);
-  }
-}
+// void main() {
+//   for (int i = 1; i <= 10; i++) {
+//     print('*' * i);
+//   }
+// }
 
 // Dalam kode Dart tersebut, operator * digunakan untuk menggandakan string. Ketika kita menulis '*' * i, kita membuat sebuah string yang terdiri dari karakter * sebanyak nilai i. Jadi, misalnya:
 //
@@ -813,4 +813,77 @@ void main() {
 // Ketika i = 2, '*' * i menghasilkan '**'.
 // Ketika i = 3, '*' * i menghasilkan '***'.
 // Operator * di sini bukan operator perkalian biasa seperti dalam matematika, tetapi operator pengulangan untuk string dalam Dart, yang memungkinkan kita mengulang karakter atau string tertentu sebanyak jumlah yang ditentukan.
+
+
+// 3. While Do
+
+// Metode lain untuk melakukan perulangan adalah dengan while. Sama seperti for, instruksi while mengevaluasi ekspresi boolean dan menjalankan kode di dalam blok while ketika bernilai true.
+
+// contoh 1 - 100
+// void main() {
+//   var i = 1;
+//
+//   while (i <= 100) {
+//     print(i);
+//     i++;
+//   }
+// }
+
+// while loop akan terus mengeksekusi blok kode selama kondisi yang ditentukan bernilai true. Jika kondisi menjadi false, loop akan berhenti.
+
+// void main() {
+//   int count = 0;
+//
+//   while (count < 5) {
+//     print(count);
+//     count++; // Increment count
+//   }
+// }
+
+// do while loop mirip dengan while loop, tetapi dengan satu perbedaan penting: blok kode dalam do while akan dieksekusi setidaknya sekali, bahkan jika kondisi awalnya false. Setelah eksekusi pertama, kondisi akan diperiksa, dan jika true, loop akan dilanjutkan.
+
+// do {
+// // kode yang akan dieksekusi
+// } while (kondisi);
+
+// contoh do while loop
+
+// void main(){
+//   int count = 0;
+//
+//   do {
+//     print(count);
+//     count++; // Increment count
+//   } while (count < 5);
+// }
+
+// Infinite loop (loop tak terhingga) adalah jenis loop dalam pemrograman yang terus berjalan tanpa henti. Ini terjadi ketika kondisi untuk menghentikan loop tidak pernah tercapai, sehingga kode di dalam loop dieksekusi terus-menerus.
+
+// contoh infinite loop
+
+// void main() {
+//   var i = 1;
+//
+//   while (i < 5) {
+//     print(i);
+//   }
+// }
+
+// variabel i selalu bernilai 1. Alhasil kondisi i < 5 akan selalu bernilai true dan akibatnya aplikasi akan terus mencetak 1 ke konsol sehingga mengalami crash.
+
+import 'dart:io';
+
+void main() {
+  int i = 10; // Jumlah baris segitiga terbalik
+
+  do {
+    // Mencetak bintang sebanyak i
+    int count = i; // Simpan nilai i ke count
+    stdout.write("*" * count); // Cetak bintang sebanyak count
+    print(""); // Pindah ke baris berikutnya
+    i--; // Mengurangi nilai i untuk segitiga terbalik
+  } while (i > 0); // Kondisi untuk menghentikan loop
+}
+
+
 
