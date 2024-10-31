@@ -748,25 +748,25 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // contoh bahwasanya output else if disesuakan dengan urutan code
 
-void main() {
-  var score = 85;
-
-  print('Nilai Anda: ${calculateScore(score)}');
-}
-
-String calculateScore(num score) {
-  if (score > 90) {
-    return 'A';
-  } else if (score > 80) {
-    return 'B';
-  } else if (score > 70) {
-    return 'C';
-  } else if (score > 60) {
-    return 'D';
-  } else {
-    return 'E';
-  }
-}
+// void main() {
+//   var score = 85;
+//
+//   print('Nilai Anda: ${calculateScore(score)}');
+// }
+//
+// String calculateScore(num score) {
+//   if (score > 90) {
+//     return 'A';
+//   } else if (score > 80) {
+//     return 'B';
+//   } else if (score > 70) {
+//     return 'C';
+//   } else if (score > 60) {
+//     return 'D';
+//   } else {
+//     return 'E';
+//   }
+// }
 
 // Fitur menarik lain dari Dart adalah conditional expressions. Dengan ini kita bisa menuliskan if-else statement hanya dalam satu baris:
 
@@ -776,4 +776,41 @@ String calculateScore(num score) {
 
 // // expression1 ?? expression2
 // var buyer = name ?? 'user';
+
+
+// 2. For Loops
+
+// For cocok digunakan pada kondisi perulangan di mana kita membutuhkan variabel indeks dan tahu berapa kali perulangan yang kita butuhkan
+
+// contoh
+
+// void main() {
+//   for (int i = 1; i <= 100; i++) {
+//     print(i);
+//   }
+// }
+
+// Terdapat tiga bagian utama dalam sintaks for di atas:
+
+// Pertama, variabel index yang seringkali diberi nama i yang berarti index. Pada variabel ini kita menginisialisasi nilai awal dari perulangan yang kita lakukan.
+
+// Kedua, operasi perbandingan. Pada bagian ini komputer akan melakukan pengecekan kondisi apakah perulangan masih perlu dilakukan. Jika bernilai true maka kode di dalam blok for akan dijalankan.
+
+// Ketiga, increment/decrement. Di sini kita melakukan penambahan atau pengurangan variabel index. Jadi pada contoh di atas variabel indeks akan ditambah dengan 1 di setiap akhir perulangan.
+
+
+//challange
+
+void main() {
+  for (int i = 1; i <= 10; i++) {
+    print('*' * i);
+  }
+}
+
+// Dalam kode Dart tersebut, operator * digunakan untuk menggandakan string. Ketika kita menulis '*' * i, kita membuat sebuah string yang terdiri dari karakter * sebanyak nilai i. Jadi, misalnya:
+//
+// Ketika i = 1, '*' * i menghasilkan '*'.
+// Ketika i = 2, '*' * i menghasilkan '**'.
+// Ketika i = 3, '*' * i menghasilkan '***'.
+// Operator * di sini bukan operator perkalian biasa seperti dalam matematika, tetapi operator pengulangan untuk string dalam Dart, yang memungkinkan kita mengulang karakter atau string tertentu sebanyak jumlah yang ditentukan.
 
