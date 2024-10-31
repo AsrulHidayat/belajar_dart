@@ -871,19 +871,43 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // variabel i selalu bernilai 1. Alhasil kondisi i < 5 akan selalu bernilai true dan akibatnya aplikasi akan terus mencetak 1 ke konsol sehingga mengalami crash.
 
-import 'dart:io';
+// import 'dart:io';
+//
+// void main() {
+//   int i = 10; // Jumlah baris segitiga terbalik
+//
+//   do {
+//     // Mencetak bintang sebanyak i
+//     int count = i; // Simpan nilai i ke count
+//     stdout.write("*" * count); // Cetak bintang sebanyak count
+//     print(""); // Pindah ke baris berikutnya
+//     i--; // Mengurangi nilai i untuk segitiga terbalik
+//   } while (i > 0); // Kondisi untuk menghentikan loop
+// }
+
+
+// 4. Break and Continue
+
+// break digunakan untuk menghentikan loop secara langsung dan keluar dari loop. Ketika break dijalankan, eksekusi program akan melanjutkan ke baris kode yang berada di luar loop tersebut.
+
+// void main() {
+//   for (int i = 0; i < 10; i++) {
+//     if (i == 5) {
+//       break; // Keluar dari loop ketika i sama dengan 5
+//     }
+//     print(i); // Mencetak nilai i
+//   }
+// }
+
+// Pernyataan continue digunakan untuk melewatkan iterasi saat ini dan melanjutkan ke iterasi berikutnya dalam loop. Ketika continue dijalankan, kode di bawahnya dalam loop untuk iterasi saat ini tidak akan dieksekusi.
+
+// Contoh Penggunaan continue:
 
 void main() {
-  int i = 10; // Jumlah baris segitiga terbalik
-
-  do {
-    // Mencetak bintang sebanyak i
-    int count = i; // Simpan nilai i ke count
-    stdout.write("*" * count); // Cetak bintang sebanyak count
-    print(""); // Pindah ke baris berikutnya
-    i--; // Mengurangi nilai i untuk segitiga terbalik
-  } while (i > 0); // Kondisi untuk menghentikan loop
+  for (int i = 0; i < 10; i++) {
+    if (i % 2 == 0) {
+      continue; // Lewati iterasi ini jika i adalah angka genap
+    }
+    print(i); // Mencetak nilai i hanya jika i adalah angka ganjil
+  }
 }
-
-
-
