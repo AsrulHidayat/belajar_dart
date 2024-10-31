@@ -1540,36 +1540,36 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Contoh Methods
 
-class Mobil {
-  // Properties
-  String merk;
-  int tahun;
-
-  // Konstruktor
-  Mobil(this.merk, this.tahun);
-
-  // Method untuk menampilkan informasi mobil
-  void informasi() {
-    print('Merk: $merk, Tahun: $tahun');
-  }
-
-  // Method untuk memperbarui tahun mobil
-  void perbaruiTahun(int tahunBaru) {
-    tahun = tahunBaru;
-  }
-}
-
-void main() {
-  // Membuat objek dari kelas Mobil
-  Mobil mobil1 = Mobil('Toyota', 2020);
-
-  // Mengakses method untuk menampilkan informasi
-  mobil1.informasi(); // Output: Merk: Toyota, Tahun: 2020
-
-  // Memperbarui tahun mobil
-  mobil1.perbaruiTahun(2022);
-  mobil1.informasi(); // Output: Merk: Toyota, Tahun: 2022
-}
+// class Mobil {
+//   // Properties
+//   String merk;
+//   int tahun;
+//
+//   // Konstruktor
+//   Mobil(this.merk, this.tahun);
+//
+//   // Method untuk menampilkan informasi mobil
+//   void informasi() {
+//     print('Merk: $merk, Tahun: $tahun');
+//   }
+//
+//   // Method untuk memperbarui tahun mobil
+//   void perbaruiTahun(int tahunBaru) {
+//     tahun = tahunBaru;
+//   }
+// }
+//
+// void main() {
+//   // Membuat objek dari kelas Mobil
+//   Mobil mobil1 = Mobil('Toyota', 2020);
+//
+//   // Mengakses method untuk menampilkan informasi
+//   mobil1.informasi(); // Output: Merk: Toyota, Tahun: 2020
+//
+//   // Memperbarui tahun mobil
+//   mobil1.perbaruiTahun(2022);
+//   mobil1.informasi(); // Output: Merk: Toyota, Tahun: 2022
+// }
 
 // Penjelasan Kode:
 // Properties:
@@ -1578,3 +1578,102 @@ void main() {
 // void informasi() adalah method yang menampilkan merk dan tahun mobil.
 // void perbaruiTahun(int tahunBaru) adalah method yang mengubah tahun mobil ke nilai baru yang diberikan.
 // Mengakses Properties dan Methods: Dalam fungsi main(), kita membuat objek mobil1 dan mengakses metode informasi() dan perbaruiTahun() untuk berinteraksi dengan properties objek tersebut.
+
+
+// 4. Constructor
+
+// Constructor adalah fungsi spesial dari sebuah kelas yang digunakan untuk membuat objek.
+
+// Beberapa perbedaan antara constructor dan fungsi biasa adalah:
+//
+// Constructor memiliki nama yang sama dengan nama kelas.
+// Constructor tidak memiliki nilai kembalian (return type).
+// Constructor akan secara otomatis dipanggil ketika sebuah objek dibuat.
+// Jika kita tidak mendefinisikan constructor, default constructor tanpa argumen akan dibuat.
+
+// import 'animal.dart';
+//
+// void main() {
+//   var dicodingCat = Animal();
+//
+//   dicodingCat.name = 'Gray';
+//   dicodingCat.age = 2;
+//   dicodingCat.weight = 4.2;
+// }
+
+// jenis konstruktor di dart
+
+// a. Default Constructor (Konstruktor Default)
+// Konstruktor tanpa parameter, yang digunakan untuk menginisialisasi objek dengan nilai default atau tidak melakukan apa-apa.
+
+// class Mobil {
+//   String merk = 'Tidak diketahui';
+//   int tahun = 2000;
+//
+//   // Konstruktor default
+//   Mobil() {
+//     print('Objek Mobil dibuat');
+//   }
+// }
+//
+// void main() {
+//   Mobil mobil1 = Mobil();
+//   print(mobil1.merk); // Output: Tidak diketahui
+// }
+
+// b. Parameterized Constructor (Konstruktor dengan Parameter)
+
+// Konstruktor ini menerima parameter sehingga nilai properties dapat ditentukan saat objek dibuat.
+
+// class Mobil {
+//   String merk;
+//   int tahun;
+//
+//   // Konstruktor dengan parameter
+//   Mobil(this.merk, this.tahun);
+// }
+//
+// void main() {
+//   Mobil mobil1 = Mobil('Toyota', 2020);
+//   print('Merk: ${mobil1.merk}, Tahun: ${mobil1.tahun}'); // Output: Merk: Toyota, Tahun: 2020
+
+// c. Named Constructor (Konstruktor Bernama)
+
+// Dart memungkinkan penggunaan beberapa konstruktor dalam satu kelas menggunakan named constructor. Named constructor membantu kita membuat beberapa konstruktor dengan nama yang berbeda untuk berbagai jenis inisialisasi.
+
+// class Mobil {
+//   String merk;
+//   int tahun;
+//
+//   // Konstruktor utama
+//   Mobil(this.merk, this.tahun);
+//
+//   // Named constructor
+//   Mobil.denganTahun(this.merk) : tahun = 2022;
+// }
+//
+// void main() {
+//   Mobil mobil1 = Mobil('Toyota', 2020);
+//   Mobil mobil2 = Mobil.denganTahun('Honda');
+//   print('Merk: ${mobil1.merk}, Tahun: ${mobil1.tahun}'); // Output: Merk: Toyota, Tahun: 2020
+//   print('Merk: ${mobil2.merk}, Tahun: ${mobil2.tahun}'); // Output: Merk: Honda, Tahun: 2022
+// }
+
+// d. Const Constructor
+
+// Jika objek dibuat dengan nilai yang tidak akan berubah (immutable), kita dapat menggunakan const constructor. Konstruktor ini menjadikan objek immutable dan tidak memungkinkan perubahan properties.
+
+class Titik {
+  final int x;
+  final int y;
+
+  // Const constructor
+  const Titik(this.x, this.y);
+}
+
+void main() {
+  const Titik titik1 = Titik(3, 4);
+  print('Titik (${titik1.x}, ${titik1.y})'); // Output: Titik (3, 4)
+}
+
+
