@@ -1636,6 +1636,7 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // void main() {
 //   Mobil mobil1 = Mobil('Toyota', 2020);
 //   print('Merk: ${mobil1.merk}, Tahun: ${mobil1.tahun}'); // Output: Merk: Toyota, Tahun: 2020
+// }
 
 // c. Named Constructor (Konstruktor Bernama)
 
