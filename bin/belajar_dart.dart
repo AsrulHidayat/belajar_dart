@@ -1487,33 +1487,94 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // Gunakan kelas ketika Anda ingin mendefinisikan jenis objek dengan atribut dan perilaku tertentu.
 // Kelas sangat berguna dalam pengembangan aplikasi besar yang memerlukan struktur dan organisasi yang baik.
 
+// void main() {
+//   var dicodingCat = Animal('Gray', 2, 4.2);
+//
+//   dicodingCat.eat();
+//   dicodingCat.poop();
+//
+//   print(dicodingCat.weight);
+// }
+//
+// class Animal {
+//   String name;
+//   int age;
+//   double weight;
+//
+//   Animal(this.name, this.age, this.weight);
+//
+//   void eat() {
+//     print('$name is eating.');
+//     weight = weight + 0.2;
+//   }
+//
+//   void sleep() {
+//     print('$name is sleeping.');
+//   }
+//
+//   void poop() {
+//     print('$name is pooping.');
+//     weight = weight - 0.1;
+//   }
+// }
+
+
+// 3. Properties & Methods
+
+// Properties adalah variabel yang menyimpan data atau status dari objek. Setiap objek dapat memiliki nilai yang berbeda untuk property yang sama. Properties dapat memiliki berbagai tingkat akses (misalnya, publik, privat, atau dilindungi) yang menentukan seberapa mudah mereka dapat diakses dari luar kelas.
+
+// contoh
+
+// class Mobil {
+//   // Properties
+//   String merk;   // Merk mobil
+//   int tahun;     // Tahun pembuatan
+//
+//   // Konstruktor
+//   Mobil(this.merk, this.tahun);
+// }
+
+// Merk dan tahun adalah properties dari kelas Mobil. Setiap objek Mobil akan memiliki nilai unik untuk merk dan tahun.
+
+// Methods adalah fungsi yang mendefinisikan perilaku atau tindakan yang dapat dilakukan oleh objek. Metode dapat mengakses dan memodifikasi properties objek. Mereka juga dapat menerima parameter dan mengembalikan nilai.
+
+// Contoh Methods
+
+class Mobil {
+  // Properties
+  String merk;
+  int tahun;
+
+  // Konstruktor
+  Mobil(this.merk, this.tahun);
+
+  // Method untuk menampilkan informasi mobil
+  void informasi() {
+    print('Merk: $merk, Tahun: $tahun');
+  }
+
+  // Method untuk memperbarui tahun mobil
+  void perbaruiTahun(int tahunBaru) {
+    tahun = tahunBaru;
+  }
+}
+
 void main() {
-  var dicodingCat = Animal('Gray', 2, 4.2);
+  // Membuat objek dari kelas Mobil
+  Mobil mobil1 = Mobil('Toyota', 2020);
 
-  dicodingCat.eat();
-  dicodingCat.poop();
+  // Mengakses method untuk menampilkan informasi
+  mobil1.informasi(); // Output: Merk: Toyota, Tahun: 2020
 
-  print(dicodingCat.weight);
+  // Memperbarui tahun mobil
+  mobil1.perbaruiTahun(2022);
+  mobil1.informasi(); // Output: Merk: Toyota, Tahun: 2022
 }
 
-class Animal {
-  String name;
-  int age;
-  double weight;
-
-  Animal(this.name, this.age, this.weight);
-
-  void eat() {
-    print('$name is eating.');
-    weight = weight + 0.2;
-  }
-
-  void sleep() {
-    print('$name is sleeping.');
-  }
-
-  void poop() {
-    print('$name is pooping.');
-    weight = weight - 0.1;
-  }
-}
+// Penjelasan Kode:
+// Properties:
+// String merk; dan int tahun; adalah properties yang menyimpan informasi tentang objek mobil.
+// Method:
+// void informasi() adalah method yang menampilkan merk dan tahun mobil.
+// void perbaruiTahun(int tahunBaru) adalah method yang mengubah tahun mobil ke nilai baru yang diberikan.
+// Mengakses Properties dan Methods: Dalam fungsi main(), kita membuat objek mobil1 dan mengakses metode informasi() dan perbaruiTahun() untuk berinteraksi dengan properties objek tersebut.
