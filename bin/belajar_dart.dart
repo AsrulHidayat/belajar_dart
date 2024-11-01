@@ -1737,32 +1737,63 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // contoh lain
 
-import 'animal.dart';
+// import 'animal.dart';
+//
+// void main() {
+//   var dicodingCat = Animal('', 2, 4.2)
+//     ..name = 'Gray'
+//     ..eat();
+// }
+//
+// class Animal {
+//   String name = '';
+//   int age = 0;
+//   double weight = 0;
+//
+//   Animal(this.name, this.age, this.weight);
+//
+//   void eat() {
+//     print('$name is eating.');
+//     weight = weight + 0.2;
+//   }
+//
+//   void sleep() {
+//     print('$name is sleeping.');
+//   }
+//
+//   void poop() {
+//     print('$name is pooping.');
+//     weight = weight - 0.1;
+//   }
+// }
+
+
+// 6. Inheritance
+
+// Inheritance adalah kemampuan suatu program untuk membuat kelas baru dari kelas yang ada. Konsep inheritance ini bisa dibayangkan layaknya seorang anak mewarisi sifat dari orang tuanya. Di dalam OOP kelas yang menurunkan sifat disebut sebagai kelas induk (parent class/superclass) sementara kelas yang mewarisi kelas induknya disebut sebagai kelas anak (child class/subclass).
+
+import 'cat.dart';
 
 void main() {
-  var dicodingCat = Animal('', 2, 4.2)
-    ..name = 'Gray'
-    ..eat();
+  var dicodingCat = Cat('Grayson', 2, 2.2, 'Gray');
+
+  dicodingCat.walk();
+  dicodingCat.eat();
+
+  print(dicodingCat.weight);
 }
 
-class Animal {
-  String name = '';
-  int age = 0;
-  double weight = 0;
+/// Output:
+/// Grayson is walking
+/// Grayson is eating.
+/// 2.4000000000000004
 
-  Animal(this.name, this.age, this.weight);
+// Jika ingin menginisialisasikan nilai furColor melalui constructor, maka kita bisa menambahkan parameter di dalam constructor.
 
-  void eat() {
-    print('$name is eating.');
-    weight = weight + 0.2;
-  }
+// Cat(String name, int age, double weight, String furColor) : this.furColor = furColor
 
-  void sleep() {
-    print('$name is sleeping.');
-  }
-
-  void poop() {
-    print('$name is pooping.');
-    weight = weight - 0.1;
-  }
-}
+// Atau, kita bisa meringkasnya seperti yang telah kita pelajari pada materi constructor.
+//
+// Cat(String name, int age, double weight, this.furColor) : super(name, age, weight);
+//
+// Apabila ingin melihat sumber dari interactive code di atas, silakan kunjungi tautan berikut.
