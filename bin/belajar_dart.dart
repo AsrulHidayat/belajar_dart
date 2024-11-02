@@ -1772,21 +1772,21 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Inheritance adalah kemampuan suatu program untuk membuat kelas baru dari kelas yang ada. Konsep inheritance ini bisa dibayangkan layaknya seorang anak mewarisi sifat dari orang tuanya. Di dalam OOP kelas yang menurunkan sifat disebut sebagai kelas induk (parent class/superclass) sementara kelas yang mewarisi kelas induknya disebut sebagai kelas anak (child class/subclass).
 
-import 'cat.dart';
-
-void main() {
-  var dicodingCat = Cat('Grayson', 2, 2.2, 'Gray');
-
-  dicodingCat.walk();
-  dicodingCat.eat();
-
-  print(dicodingCat.weight);
-}
-
-/// Output:
-/// Grayson is walking
-/// Grayson is eating.
-/// 2.4000000000000004
+// import 'cat.dart';
+//
+// void main() {
+//   var dicodingCat = Cat('Grayson', 2, 2.2, 'Gray');
+//
+//   dicodingCat.walk();
+//   dicodingCat.eat();
+//
+//   print(dicodingCat.weight);
+// }
+//
+// /// Output:
+// /// Grayson is walking
+// /// Grayson is eating.
+// /// 2.4000000000000004
 
 // Jika ingin menginisialisasikan nilai furColor melalui constructor, maka kita bisa menambahkan parameter di dalam constructor.
 
@@ -1797,3 +1797,104 @@ void main() {
 // Cat(String name, int age, double weight, this.furColor) : super(name, age, weight);
 //
 // Apabila ingin melihat sumber dari interactive code di atas, silakan kunjungi tautan berikut.
+
+
+// 7. Abstract
+
+// abstract adalah konsep yang digunakan untuk mendefinisikan kelas atau metode yang bersifat umum dan tidak dapat langsung diinstansiasi (dibuat objeknya). Kelas dan metode abstrak bertujuan untuk menyediakan kerangka bagi kelas-kelas lain yang lebih spesifik dan akan mengimplementasikan fungsionalitas tertentu.
+
+// Kelas abstrak adalah kelas yang tidak dapat dibuat objeknya secara langsung dan hanya dapat digunakan sebagai kelas dasar (parent class) untuk kelas-kelas lain. Di Dart, kelas abstrak dideklarasikan dengan kata kunci abstract.
+
+// Contoh
+// import 'animal.dart';
+//
+// void main() {
+//   var dicodingCat = Animal('', 2, 4.2)
+//     ..name = 'Gray'
+//     ..eat();
+// }
+//
+// abstract class Animal {
+//   String name = '';
+//   int age = 0;
+//   double weight = 0;
+//
+//   Animal(this.name, this.age, this.weight);
+//
+//   void eat() {
+//     print('$name is eating.');
+//     weight = weight + 0.2;
+//   }
+//
+//   void sleep() {
+//     print('$name is sleeping.');
+//   }
+//
+//   void poop() {
+//     print('$name is pooping.');
+//     weight = weight - 0.1;
+//   }
+// }
+
+// Contoh Lainnya
+
+abstract class Hewan {
+  // Properti umum yang dimiliki setiap hewan
+  String nama;
+  int umur;
+
+  Hewan(this.nama, this.umur);
+
+  // Metode abstrak (tidak memiliki implementasi)
+  void suara();
+
+  // Metode yang memiliki implementasi
+  void info() {
+    print("Nama: $nama, Umur: $umur tahun");
+  }
+}
+
+// Pada contoh di atas:
+//
+// Kelas Hewan adalah kelas abstrak karena mengandung metode suara() yang tidak memiliki implementasi.
+// Metode info() memiliki implementasi dan dapat dipanggil dari kelas turunan.
+
+// Kelas Turunan yang Mengimplementasikan Abstract Class
+// Kelas turunan (subclass) harus mengimplementasikan metode abstrak dari kelas induk abstrak. Jika tidak, subclass juga harus dideklarasikan sebagai abstrak.
+
+class Kucing extends Hewan {
+  Kucing(String nama, int umur) : super(nama, umur);
+
+  // Mengimplementasikan metode abstrak `suara`
+  @override
+  void suara() {
+    print("Meong!");
+  }
+}
+
+void main() {
+  Kucing kucing1 = Kucing("Tom", 3);
+  kucing1.info(); // Output: Nama: Tom, Umur: 3 tahun
+  kucing1.suara(); // Output: Meong!
+}
+
+// Pada contoh ini:
+//
+// Kelas Kucing menginherit kelas abstrak Hewan dan mengimplementasikan metode suara().
+// Objek Kucing kemudian dapat dibuat, dan metode suara() menghasilkan output yang diharapkan.
+
+// Fungsi dari Abstract Class
+// 1. Sebagai Template: Kelas abstrak memungkinkan Anda membuat template atau kerangka bagi kelas yang lebih spesifik. Semua kelas yang menginherit kelas abstrak harus memenuhi persyaratan metode dan properti yang didefinisikan di kelas abstrak.
+//
+// 2. Penggunaan Polimorfisme: Abstract class membantu dalam menerapkan konsep polimorfisme. Misalnya, kita dapat menggunakan kelas Hewan sebagai tipe objek untuk banyak subclass yang berbeda seperti Kucing, Anjing, dll., dan memanggil metode suara() yang sudah diimplementasikan oleh masing-masing subclass.
+//
+// 3. Memisahkan Definisi dan Implementasi: Dengan abstract class, Anda dapat memisahkan definisi metode (di kelas abstrak) dari implementasinya (di kelas turunan). Hal ini membuat kode lebih modular dan mudah di-maintain.
+
+// Kapan Menggunakan Abstract Class?
+// Gunakan abstract class ketika:
+//
+// Anda ingin menyediakan kerangka umum atau template untuk kelas-kelas lain.
+// Anda memiliki beberapa metode yang perlu diimplementasikan berbeda di setiap kelas turunan.
+// Anda tidak ingin kelas tersebut diinstansiasi langsung.
+// Abstract class adalah alat yang sangat berguna dalam desain perangkat lunak berbasis OOP, terutama dalam membuat kode yang mudah dipelihara dan scalable.
+
