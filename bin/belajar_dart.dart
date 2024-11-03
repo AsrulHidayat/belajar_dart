@@ -1929,34 +1929,126 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 //Misalkan kita memiliki kelas Hewan:
 
-class Hewan {
-  void makan() {
-    print("Hewan sedang makan");
-  }
-
-  void tidur() {
-    print("Hewan sedang tidur");
-  }
-}
+// class Hewan {
+//   void makan() {
+//     print("Hewan sedang makan");
+//   }
+//
+//   void tidur() {
+//     print("Hewan sedang tidur");
+//   }
+// }
 
 // Kelas Hewan secara otomatis menciptakan interface yang berisi metode makan dan tidur. Kelas lain bisa mengimplementasikan interface Hewan dengan menggunakan kata kunci implements, meskipun Hewan bukanlah interface secara eksplisit.
 
-void cetakMakanan(Hewan hewan) {
-  hewan.makan();
-}
-
-void main() {
-  Kucing kucing1 = Kucing();
-  cetakMakanan(kucing1); // Output: Kucing makan ikan
-}
-
-  @override
-  void tidur() {
-    print("Kucing sedang tidur");
-  }
+// void cetakMakanan(Hewan hewan) {
+//   hewan.makan();
+// }
+//
+// void main() {
+//   Kucing kucing1 = Kucing();
+//   cetakMakanan(kucing1); // Output: Kucing makan ikan
+// }
+//
+//   @override
+//   void tidur() {
+//     print("Kucing sedang tidur");
+//   }
 
 
 // Dalam contoh ini:
 //
 // Kelas Kucing mengimplementasikan semua metode dari Hewan.
 // Karena menggunakan implements, kelas Kucing harus menyediakan implementasi untuk semua metode dari interface Hewan.
+
+
+// 9. Enumerated Types
+
+// Dart menyediakan Enumerated Type, sering disebut Enumerations atau Enums. Enums mewakili kumpulan konstan yang membuat kode kita lebih jelas dan mudah dibaca.
+
+// enum Rainbow {
+//   red, orange, yellow, green, blue, indigo, violet
+// }
+//
+// enum Weather {
+//   sunny, cloudy, rain, storm;
+// }
+
+// contoh
+// void main() {
+//   print(Rainbow.values);
+//   print(Rainbow.blue);
+//   print(Rainbow.orange.index);
+// }
+//
+// enum Rainbow { red, orange, yellow, green, blue, indigo, violet }
+
+// untuk menampilkan nilai string setiap item kita dapat menggunakan properti .name
+
+// print(Rainbow.blue.name);   // blue
+
+// Kita juga bisa menggunakan enums ke dalam switch statements. Namun kita perlu menangani semua kemungkinan nilai enums yang Ada.
+
+// void main() {
+//   var weatherForecast = Weather.cloudy;
+//
+//   switch (weatherForecast) {
+//     case Weather.sunny:
+//       print("Today's weather forecast is sunny");
+//       break;
+//     case Weather.cloudy:
+//       print("Today's weather forecast is cloudy");
+//       break;
+//     case Weather.rain:
+//       print("Today's weather forecast is rain");
+//       break;
+//     case Weather.storm:
+//       print("Today's weather forecast is storm");
+//       break;
+//   }
+// }
+
+// enum Weather { sunny, cloudy, rain, storm }
+//
+// Enums mempunyai fitur layaknya kelas yang memiliki attribute dan behaviour. Dengan begitu, kita dapat memberikan variabel ataupun constructor di dalam Enums.
+
+// enum Weather {
+//   sunny(15),
+//   cloudy(34),
+//   rain(69),
+//   storm(83);
+//
+//   final int rainAmount;
+//
+//   const Weather(this.rainAmount);
+// }
+
+
+void main() {
+  var weatherForecast = Weather.cloudy;
+
+  print(weatherForecast);
+}
+
+enum Weather {
+  sunny(15),
+  cloudy(34),
+  rain(69),
+  storm(83);
+
+  final int rainAmount;
+
+  const Weather(this.rainAmount);
+
+  @override
+  String toString() =>
+      "Today's weather forecast is $name with a $rainAmount% chance of rain";
+}
+
+// Enumerated Types atau enum adalah tipe data khusus dalam Dart yang memungkinkan kita untuk mendefinisikan serangkaian nilai konstan dengan nama yang lebih mudah dibaca dan dipahami. Enum berguna untuk mendefinisikan kumpulan nilai yang terbatas, seperti status, level, atau arah, yang tidak berubah selama program berjalan.
+
+// Kapan Menggunakan Enum?
+// Enum ideal untuk:
+//
+// Situasi di mana ada serangkaian nilai tetap, seperti hari dalam seminggu, level, status, atau arah (Utara, Selatan).
+// Penggunaan yang meningkatkan keterbacaan kode, membuat kode lebih mudah dipahami dan bebas dari kesalahan dalam penggunaan string atau angka yang tidak terkontrol.
