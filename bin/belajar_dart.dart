@@ -1837,22 +1837,22 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // }
 
 // Contoh Lainnya
-
-abstract class Hewan {
-  // Properti umum yang dimiliki setiap hewan
-  String nama;
-  int umur;
-
-  Hewan(this.nama, this.umur);
-
-  // Metode abstrak (tidak memiliki implementasi)
-  void suara();
-
-  // Metode yang memiliki implementasi
-  void info() {
-    print("Nama: $nama, Umur: $umur tahun");
-  }
-}
+//
+// abstract class Hewan {
+//   // Properti umum yang dimiliki setiap hewan
+//   String nama;
+//   int umur;
+//
+//   Hewan(this.nama, this.umur);
+//
+//   // Metode abstrak (tidak memiliki implementasi)
+//   void suara();
+//
+//   // Metode yang memiliki implementasi
+//   void info() {
+//     print("Nama: $nama, Umur: $umur tahun");
+//   }
+// }
 
 // Pada contoh di atas:
 //
@@ -1862,21 +1862,21 @@ abstract class Hewan {
 // Kelas Turunan yang Mengimplementasikan Abstract Class
 // Kelas turunan (subclass) harus mengimplementasikan metode abstrak dari kelas induk abstrak. Jika tidak, subclass juga harus dideklarasikan sebagai abstrak.
 
-class Kucing extends Hewan {
-  Kucing(String nama, int umur) : super(nama, umur);
-
-  // Mengimplementasikan metode abstrak `suara`
-  @override
-  void suara() {
-    print("Meong!");
-  }
-}
-
-void main() {
-  Kucing kucing1 = Kucing("Tom", 3);
-  kucing1.info(); // Output: Nama: Tom, Umur: 3 tahun
-  kucing1.suara(); // Output: Meong!
-}
+// class Kucing extends Hewan {
+//   Kucing(String nama, int umur) : super(nama, umur);
+//
+//   // Mengimplementasikan metode abstrak `suara`
+//   @override
+//   void suara() {
+//     print("Meong!");
+//   }
+// }
+//
+// void main() {
+//   Kucing kucing1 = Kucing("Tom", 3);
+//   kucing1.info(); // Output: Nama: Tom, Umur: 3 tahun
+//   kucing1.suara(); // Output: Meong!
+// }
 
 // Pada contoh ini:
 //
@@ -1898,3 +1898,65 @@ void main() {
 // Anda tidak ingin kelas tersebut diinstansiasi langsung.
 // Abstract class adalah alat yang sangat berguna dalam desain perangkat lunak berbasis OOP, terutama dalam membuat kode yang mudah dipelihara dan scalable.
 
+
+// 8. Implicit Interface
+
+// Interface atau antarmuka merupakan set instruksi yang bisa diimplementasi oleh objek. Secara umum, interface berfungsi sebagai penghubung antara sesuatu yang abstrak dengan sesuatu yang nyata.
+
+// class ClassName implements InterfaceName
+//
+// class Flyable {
+//   void fly() { }
+// }
+//
+// class Bird extends Animal implements Flyable {
+//   String featherColor;
+//
+//   Bird(String name, int age, double weight, this.featherColor) : super(name, age, weight);
+//
+// }
+
+// void main() {
+//   var dicodingBird = Bird('Birdy', 2, 0.8, 'Gray');
+//
+//   dicodingBird.fly();
+//   dicodingBird.eat();
+// }
+
+// Dalam bahasa Dart, Implicit Interface adalah konsep di mana setiap kelas secara otomatis memberikan interface (antarmuka) yang dapat digunakan oleh kelas lain tanpa harus secara eksplisit mendeklarasikan interface. Ini berbeda dari bahasa lain di mana interface harus dideklarasikan dengan kata kunci khusus.
+
+// Contoh Penggunaan Implicit Interface
+
+//Misalkan kita memiliki kelas Hewan:
+
+class Hewan {
+  void makan() {
+    print("Hewan sedang makan");
+  }
+
+  void tidur() {
+    print("Hewan sedang tidur");
+  }
+}
+
+// Kelas Hewan secara otomatis menciptakan interface yang berisi metode makan dan tidur. Kelas lain bisa mengimplementasikan interface Hewan dengan menggunakan kata kunci implements, meskipun Hewan bukanlah interface secara eksplisit.
+
+void cetakMakanan(Hewan hewan) {
+  hewan.makan();
+}
+
+void main() {
+  Kucing kucing1 = Kucing();
+  cetakMakanan(kucing1); // Output: Kucing makan ikan
+}
+
+  @override
+  void tidur() {
+    print("Kucing sedang tidur");
+  }
+
+
+// Dalam contoh ini:
+//
+// Kelas Kucing mengimplementasikan semua metode dari Hewan.
+// Karena menggunakan implements, kelas Kucing harus menyediakan implementasi untuk semua metode dari interface Hewan.
