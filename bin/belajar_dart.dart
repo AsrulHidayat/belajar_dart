@@ -2024,26 +2024,26 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // }
 
 
-void main() {
-  var weatherForecast = Weather.cloudy;
-
-  print(weatherForecast);
-}
-
-enum Weather {
-  sunny(15),
-  cloudy(34),
-  rain(69),
-  storm(83);
-
-  final int rainAmount;
-
-  const Weather(this.rainAmount);
-
-  @override
-  String toString() =>
-      "Today's weather forecast is $name with a $rainAmount% chance of rain";
-}
+// void main() {
+//   var weatherForecast = Weather.cloudy;
+//
+//   print(weatherForecast);
+// }
+//
+// enum Weather {
+//   sunny(15),
+//   cloudy(34),
+//   rain(69),
+//   storm(83);
+//
+//   final int rainAmount;
+//
+//   const Weather(this.rainAmount);
+//
+//   @override
+//   String toString() =>
+//       "Today's weather forecast is $name with a $rainAmount% chance of rain";
+// }
 
 // Enumerated Types atau enum adalah tipe data khusus dalam Dart yang memungkinkan kita untuk mendefinisikan serangkaian nilai konstan dengan nama yang lebih mudah dibaca dan dipahami. Enum berguna untuk mendefinisikan kumpulan nilai yang terbatas, seperti status, level, atau arah, yang tidak berubah selama program berjalan.
 
@@ -2052,3 +2052,108 @@ enum Weather {
 //
 // Situasi di mana ada serangkaian nilai tetap, seperti hari dalam seminggu, level, status, atau arah (Utara, Selatan).
 // Penggunaan yang meningkatkan keterbacaan kode, membuat kode lebih mudah dipahami dan bebas dari kesalahan dalam penggunaan string atau angka yang tidak terkontrol.
+
+
+// 10. Mixins
+
+// Mixin adalah cara menggunakan kembali kode kelas dalam banyak hirarki kelas. Konsep mixin mungkin adalah konsep yang baru bagi Anda karena konsep ini tidak ada pada bahasa C# atau Java. Jadi kenapa dan kapan kita perlu menggunakan mixin?
+
+// Mixin adalah fitur dalam Dart yang memungkinkan kita untuk "menyematkan" fungsionalitas dari kelas lain ke dalam kelas yang ada, tanpa menggunakan pewarisan secara langsung. Ini memungkinkan kita untuk menggabungkan perilaku dari beberapa kelas tanpa harus mengikuti hierarki pewarisan tradisional. Dengan mixin, kita bisa menambahkan metode dan properti dari kelas-kelas lain ke dalam suatu kelas dengan lebih fleksibel.
+
+// Contoh Mixin
+// Misalnya, kita memiliki beberapa perilaku umum yang bisa diterapkan pada kelas hewan, seperti berjalan dan berenang:
+
+mixin Berjalan {
+  void berjalan() {
+    print("Sedang berjalan.");
+  }
+}
+
+mixin Berenang {
+  void berenang() {
+    print("Sedang berenang.");
+  }
+}
+
+// Kita bisa membuat kelas yang menggunakan kedua mixin tersebut tanpa harus membuat kelas induk yang sama untuk semua hewan yang bisa berjalan dan berenang:
+
+// class Bebek with Berjalan, Berenang {
+//   void info() {
+//     print("Ini adalah bebek.");
+//   }
+// }
+//
+// void main() {
+//   Bebek bebek = Bebek();
+//   bebek.info(); // Output: Ini adalah bebek.
+//   bebek.berjalan(); // Output: Sedang berjalan.
+//   bebek.berenang(); // Output: Sedang berenang.
+// }
+
+// Pada contoh ini:
+//
+// Bebek menggunakan with diikuti oleh nama mixin Berjalan dan Berenang.
+// Bebek mewarisi metode berjalan dari Berjalan dan metode berenang dari Berenang.
+
+// Mixin dengan Pewarisan
+// Dart memungkinkan mixin untuk digunakan bersama dengan pewarisan, sehingga Anda bisa menggunakan extends dan with dalam satu kelas. Misalnya:
+
+// class Hewan {
+//   void makan() {
+//     print("Sedang makan.");
+//   }
+
+// Dalam contoh ini, Kucing:
+//
+// Mewari
+// // }
+// //
+// // class Kucing extends Hewan with Berjalan {
+// //   void suara() {
+// //     print("Meong!");
+// //   }
+// // }
+// //
+// // void main() {
+// //   Kucing kucing = Kucing();
+// //   kucing.makan();    // Output: Sedang makan.
+// //   kucing.berjalan(); // Output: Sedang berjalan.
+// //   kucing.suara();    // Output: Meong!
+// // }si properti dan metode dari Hewan.
+// Menggunakan mixin Berjalan, sehingga bisa memanggil metode berjalan().
+
+// Kapan Menggunakan Mixin?
+// Mixin ideal untuk:
+//
+// Berbagi Fungsionalitas yang sama di antara kelas-kelas yang berbeda.
+// Menghindari Hierarki Pewarisan Kompleks: Jika Anda hanya ingin menambahkan fungsi tertentu tanpa memaksakan hubungan "is-a" (misalnya, tidak setiap hewan adalah perenang, tetapi beberapa hewan bisa berenang).
+// Menghindari Penggunaan Inheritance ketika hanya perlu menambahkan beberapa metode atau properti.
+
+void main() {
+  var arielNoah = Musician();
+  arielNoah.perform();
+}
+
+abstract class Performer {
+  void perform();
+}
+
+mixin Dancer implements Performer {
+  @override
+  void perform() {
+    print('Dancing');
+  }
+}
+
+mixin Singer implements Performer {
+  @override
+  void perform() {
+    print('Singing');
+  }
+}
+
+class Musician extends Performer with Dancer, Singer {
+  void showTime() {
+    perform();
+  }
+}
