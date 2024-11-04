@@ -21,3 +21,29 @@
 // Kompilasi ahead of time (AOT) yang lebih baik.
 // Kode yang dihasilkan saat kompilasi AOT menjadi jauh lebih efisien.
 
+
+// 2. Generic
+
+// Jika Anda perhatikan pada dokumentasi collection seperti List, sebenarnya tipe dari List tersebut adalah List<E>. Tanda <...> ini menunjukkan bahwa List adalah tipe generic, tipe yang memiliki tipe parameter. Menurut coding convention dari Dart, tipe parameter dilambangkan dengan satu huruf kapital seperti E, T, K, atau V.
+
+// Secara umum generic merupakan konsep yang digunakan untuk menentukan tipe data yang akan kita gunakan. Kita bisa mengganti tipe parameter generic pada Dart dengan tipe yang lebih spesifik dengan menentukan instance dari tipe tersebut.
+
+// List<int> numberList = [1, 2, 3, 4, 5];
+// List<String> stringList = ['Dart', 'Flutter', 'Android', 'iOS'];
+// List dynamicList = [1, 2, 3, 'empat'];  // List<dynamic>
+
+// Tipe parameter yang digunakan pada variabel list di atas adalah int, maka nilai yang bisa kita masukkan adalah nilai dengan tipe int. Begitu juga jika kita menentukan tipe parameter String, maka tipe yang bisa kita masukkan ke dalam list hanya berupa String.
+
+// Dari kasus di atas kita bisa simpulkan bahwa Dart membantu kita menghasilkan kode yang type safe dengan membatasi tipe yang bisa digunakan ke dalam suatu objek dan menghindari bug. Selain itu generic juga bermanfaat mengurangi duplikasi kode. Misalnya ketika Anda perlu untuk menyimpan objek cache bertipe String dan int. Alih-alih membuat dua objek StringCache dan IntCache, Anda bisa membuat satu objek saja dengan memanfaatkan tipe parameter dari generic.
+
+// void main() {
+//   List<Bird> birdList = [Bird(), Dove(), Duck()];
+// }
+//
+// class Animal {}
+//
+// class Bird implements Animal {}
+//
+// class Dove implements Bird {}
+//
+// class Duck implements Bird {}

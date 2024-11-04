@@ -2276,3 +2276,18 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 //
 //   return () => print("Value is ${base + count++}");
 // }
+
+
+// Contoh Generic
+
+void main() {
+  List<Bird> birdList = [Bird(), Dove(), Duck()];
+}
+
+class Animal {}
+
+class Bird implements Animal {}
+
+class Dove implements Bird {}
+
+class Duck implements Bird {}
