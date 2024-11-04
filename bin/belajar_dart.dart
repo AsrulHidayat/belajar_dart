@@ -2280,14 +2280,41 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Contoh Generic
 
-void main() {
-  List<Bird> birdList = [Bird(), Dove(), Duck()];
-}
+// void main() {
+//   List<Bird> birdList = [Bird(), Dove(), Duck()];
+// }
+//
+// class Animal {}
+//
+// class Bird implements Animal {}
+//
+// class Dove implements Bird {}
+//
+// class Duck implements Bird {}
 
-class Animal {}
 
-class Bird implements Animal {}
 
-class Dove implements Bird {}
+// Contoh Type Inference di Dart
+// 1. Inferensi Tipe dengan var
 
-class Duck implements Bird {}
+// void main() {
+//   var age = 25;       // Dart menginfersikan age sebagai int
+//   var name = "Asrul"; // Dart menginfersikan name sebagai String
+//   var price = 19.99;  // Dart menginfersikan price sebagai double
+//
+//   print(age.runtimeType);   // Output: int
+//   print(name.runtimeType);  // Output: String
+//   print(price.runtimeType); // Output: double
+// }
+
+// 2. Inferensi Tipe dengan final dan const
+
+// void main() {
+//   final country = "Indonesia"; // Dart menginfersikan country sebagai String
+//   const pi = 3.14159;          // Dart menginfersikan pi sebagai double
+//
+//   print(country.runtimeType); // Output: String
+//   print(pi.runtimeType);      // Output: double
+// }
+
+

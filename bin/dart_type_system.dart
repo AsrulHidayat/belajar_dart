@@ -47,3 +47,49 @@
 // class Dove implements Bird {}
 //
 // class Duck implements Bird {}
+
+
+// 3. Type inference
+
+// Type Inference (Inferensi Tipe) adalah fitur dalam bahasa pemrograman yang memungkinkan compiler atau interpreter menentukan tipe data dari suatu variabel secara otomatis berdasarkan nilai yang diinisialisasikan. Di Dart, fitur ini sangat berguna karena memungkinkan kode menjadi lebih ringkas dan tetap kuat secara tipe, tanpa harus selalu menuliskan tipe variabel secara eksplisit.
+
+// Bagaimana Type Inference Bekerja?
+// Ketika Anda mendeklarasikan sebuah variabel dan memberikan nilai awal padanya, Dart akan menginfersikan tipe variabel tersebut sesuai dengan nilai yang diberikan. Misalnya, jika Anda memberikan nilai berupa angka, Dart akan mengenali variabel itu sebagai tipe int atau double, tergantung pada nilai yang Anda berikan.
+
+// Contoh Type Inference di Dart
+// 1. Inferensi Tipe dengan var
+
+// void main() {
+//   var age = 25;       // Dart menginfersikan age sebagai int
+//   var name = "Asrul"; // Dart menginfersikan name sebagai String
+//   var price = 19.99;  // Dart menginfersikan price sebagai double
+//
+//   print(age.runtimeType);   // Output: int
+//   print(name.runtimeType);  // Output: String
+//   print(price.runtimeType); // Output: double
+// }
+
+// Dalam contoh ini:
+
+// Dart secara otomatis mengenali age sebagai int, name sebagai String, dan price sebagai double tanpa kita harus menyatakan tipe tersebut secara eksplisit.
+
+// 2. Inferensi Tipe dengan final dan const
+// Dart juga bisa melakukan inferensi tipe pada variabel yang dideklarasikan dengan final dan const.
+
+void main() {
+  final country = "Indonesia"; // Dart menginfersikan country sebagai String
+  const pi = 3.14159;          // Dart menginfersikan pi sebagai double
+
+  print(country.runtimeType); // Output: String
+  print(pi.runtimeType);      // Output: double
+}
+
+
+// Manfaat Type Inference
+// Kode Lebih Ringkas: Anda tidak perlu menuliskan tipe secara eksplisit, sehingga kode menjadi lebih mudah dibaca.
+// Konsistensi Tipe: Walaupun tipe tidak didefinisikan secara eksplisit, Dart tetap menjaga konsistensi tipe sehingga error terkait tipe dapat dideteksi saat compile time.
+// Efisiensi Pengembangan: Dengan type inference, pengembangan bisa lebih cepat karena Anda tidak perlu menentukan tipe variabel secara manual setiap kali mendeklarasikan variabel baru.
+
+// Catatan Penting
+// Inferensi Tipe Tidak Sama dengan Tipe Dinamis: Meskipun Anda tidak menyebutkan tipe, variabel tetap memiliki tipe yang ditentukan saat compile time (misalnya int, String, dll).
+// dynamic Tipe: Jika Anda menggunakan dynamic, Dart tidak akan melakukan type inference dan variabel akan bisa menyimpan tipe data apapun.
