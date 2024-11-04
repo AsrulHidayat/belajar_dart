@@ -2265,14 +2265,14 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 
 // Contoh kode implementasi closure:
 
-void main() {
-  var closureExample = calculate(2);
-  closureExample();
-  closureExample();
-}
-
-Function calculate(base) {
-  var count = 1;
-
-  return () => print("Value is ${base + count++}");
-}
+// void main() {
+//   var closureExample = calculate(2);
+//   closureExample();
+//   closureExample();
+// }
+//
+// Function calculate(base) {
+//   var count = 1;
+//
+//   return () => print("Value is ${base + count++}");
+// }
