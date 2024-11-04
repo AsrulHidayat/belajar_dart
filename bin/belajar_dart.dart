@@ -2230,3 +2230,5 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // StringExtension adalah nama ekstensi.
 // on String berarti kita menerapkan ekstensi ini pada kelas String.
 // Metode capitalize() membuat huruf pertama string menjadi kapital.
+
+
