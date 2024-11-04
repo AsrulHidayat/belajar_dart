@@ -38,5 +38,27 @@
 // Maksud dari function merupakan first-class citizen adalah bahwa function berlaku sama seperti komponen pemrograman yang lain. Sebuah fungsi bisa dimasukkan ke variabel menjadi parameter dalam suatu fungsi dan juga menjadi nilai kembalian pada fungsi. Higher order functions adalah fungsi yang mengambil fungsi lain sebagai argumen dan juga dapat mengembalikan fungsi.
 
 
+// 2. Anonymous Functions
 
+// Kebanyakan fungsi pada Dart memiliki nama seperti sum(), main(), atau print(). Pada Dart kita bisa membuat fungsi yang tidak bernama alias nameless atau anonymous. Anonymous function ini juga dikenal dengan nama lambda.
+
+// Untuk membuat lambda atau anonymous function kita cukup menuliskan tanda kurung untuk menerima parameter dan body function-nya.
+
+// void main() {
+//       (int num1, int num2) {
+//     return num1 + num2;
+//   };
+// }
+
+// Kita bisa menggunakan keyword var atau secara eksplisit menggunakan tipe data Function.
+
+// void main() {
+//   var sum = (int num1, int num2) => num1 + num2;
+//
+//   Function printLambda = () => print('This is lambda function');
+//
+//   // Memanggil nama variabel dari anonymous function
+//   print(sum(3, 4));
+//   printLambda();
+// }
 
