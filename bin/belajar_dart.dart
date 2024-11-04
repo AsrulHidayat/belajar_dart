@@ -2063,17 +2063,17 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // Contoh Mixin
 // Misalnya, kita memiliki beberapa perilaku umum yang bisa diterapkan pada kelas hewan, seperti berjalan dan berenang:
 
-mixin Berjalan {
-  void berjalan() {
-    print("Sedang berjalan.");
-  }
-}
-
-mixin Berenang {
-  void berenang() {
-    print("Sedang berenang.");
-  }
-}
+// mixin Berjalan {
+//   void berjalan() {
+//     print("Sedang berjalan.");
+//   }
+// }
+//
+// mixin Berenang {
+//   void berenang() {
+//     print("Sedang berenang.");
+//   }
+// }
 
 // Kita bisa membuat kelas yang menggunakan kedua mixin tersebut tanpa harus membuat kelas induk yang sama untuk semua hewan yang bisa berjalan dan berenang:
 
@@ -2129,31 +2129,104 @@ mixin Berenang {
 // Menghindari Hierarki Pewarisan Kompleks: Jika Anda hanya ingin menambahkan fungsi tertentu tanpa memaksakan hubungan "is-a" (misalnya, tidak setiap hewan adalah perenang, tetapi beberapa hewan bisa berenang).
 // Menghindari Penggunaan Inheritance ketika hanya perlu menambahkan beberapa metode atau properti.
 
-void main() {
-  var arielNoah = Musician();
-  arielNoah.perform();
-}
+// void main() {
+//   var arielNoah = Musician();
+//   arielNoah.perform();
+// }
+//
+// abstract class Performer {
+//   void perform();
+// }
+//
+// mixin Dancer implements Performer {
+//   @override
+//   void perform() {
+//     print('Dancing');
+//   }
+// }
+//
+// mixin Singer implements Performer {
+//   @override
+//   void perform() {
+//     print('Singing');
+//   }
+// }
+//
+// class Musician extends Performer with Dancer, Singer {
+//   void showTime() {
+//     perform();
+//   }
+// }
 
-abstract class Performer {
-  void perform();
-}
 
-mixin Dancer implements Performer {
-  @override
-  void perform() {
-    print('Dancing');
-  }
-}
+// 11. Extension Method
 
-mixin Singer implements Performer {
-  @override
-  void perform() {
-    print('Singing');
-  }
-}
+// Tujuan dari fitur ini adalah supaya kita bisa membuat fungsionalitas tambahan dari library yang sudah ada.
 
-class Musician extends Performer with Dancer, Singer {
-  void showTime() {
-    perform();
-  }
-}
+// void main() {
+//   var unsortedNumbers = [2, 5, 3, 1, 4];
+//   print(unsortedNumbers);
+//
+//   var sortedNumbers = unsortedNumbers.sortAsc();
+//
+//   print(sortedNumbers);
+// }
+//
+// extension Sorting on List<int> {
+//   List<int> sortAsc() {
+//     var list = this;
+//     var length = this.length;
+//
+//     for (int i = 0; i < length - 1; i++) {
+//       int min = i;
+//       for (int j = i + 1; j < length; j++) {
+//         if (list[j] < list[min]) {
+//           min = j;
+//         }
+//       }
+//
+//       int tmp = list[min];
+//       list[min] = list[i];
+//       list[i] = tmp;
+//     }
+//
+//     return list;
+//   }
+// }
+
+// Kita juga bisa menggunakan kembali extension method ini di beberapa berkas yang berbeda sebagai library.
+
+// import 'extension.dart';
+//
+// void main() {
+//   var unsortedNumbers = [2, 5, 3, 1, 4];
+//   print(unsortedNumbers);
+//   var sortedNumbers = unsortedNumbers.sortAsc();
+//   print(sortedNumbers);
+// }
+
+// Extension Method di Dart adalah fitur yang memungkinkan kita menambahkan metode baru pada kelas yang sudah ada, tanpa harus mengubah atau membuat subkelas dari kelas tersebut. Ini sangat berguna saat kita ingin memperluas fungsi pada kelas tertentu, terutama kelas bawaan atau kelas dari pustaka eksternal, tanpa harus mengubah kode asli kelas tersebut.
+//
+// Cara Membuat Extension Method
+// Untuk membuat extension method, kita menggunakan kata kunci extension diikuti oleh nama ekstensi, kemudian kata kunci on, dan nama kelas yang ingin kita tambahkan metode baru.
+//
+// Contoh
+// Misalkan kita ingin menambahkan metode capitalize() pada tipe data String untuk mengubah huruf pertama string menjadi huruf besar.
+
+// extension StringExtension on String {
+//   String capitalize() {
+//     if (this.isEmpty) return this;
+//     return '${this[0].toUpperCase()}${this.substring(1)}';
+//   }
+// }
+//
+// void main() {
+//   String kata = "halo";
+//   print(kata.capitalize()); // Output: Halo
+// }
+
+// Pada contoh ini:
+//
+// StringExtension adalah nama ekstensi.
+// on String berarti kita menerapkan ekstensi ini pada kelas String.
+// Metode capitalize() membuat huruf pertama string menjadi kapital.
