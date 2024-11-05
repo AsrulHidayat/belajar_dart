@@ -2318,3 +2318,75 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 // }
 
 
+// Contoh 1 Future : Uncompleted
+
+// void main() {
+//   final myFuture = Future(() {
+//     print('Creating the future');
+//     return 12;
+//   });
+//   print('main() done');
+// }
+
+// Contoh 2 Future : Completed with data
+
+// void main() {
+//   getOrder().then((value) { // penggunaan .then
+//     print('Your ordered: $value');
+//   });
+//   print('Getting your order...');
+// }
+//
+// Future<String> getOrder() {
+//   return Future.delayed(Duration(seconds: 3), () {
+//     return 'Coffee Boba';
+//   });
+// }
+
+// Contoh 3 Future : Completed with error
+
+// void main() {
+//   getOrder().then((value) {
+//     print('Your ordered: $value');
+//   }).catchError((error) { // contoh penambahan with error
+//     print('Sorry. $error');
+//   });
+//   print('Getting your order...');
+// }
+//
+// Future<String> getOrder() {
+//   return Future.delayed(Duration(seconds: 3), () {
+//     var isStockAvailable = false;
+//     if (isStockAvailable) {
+//       return 'Coffee Boba';
+//     } else {
+//       throw 'Our stock is not enough.';
+//     }
+//   });
+// }
+
+// Contoh 3 Future : When Completed 
+
+void main() {
+  getOrder().then((value) {
+    print('Your ordered: $value');
+  }).catchError((error) {
+    print('Sorry. $error');
+  }).whenComplete(() {
+    print('Thank you');
+  });
+  print('Getting your order...');
+}
+
+Future<String> getOrder() {
+  return Future.delayed(Duration(seconds: 3), () {
+    var isStockAvailable = false;
+    if (isStockAvailable) {
+      return 'Coffee Boba';
+    } else {
+      throw 'Our stock is not enough.';
+    }
+  });
+}
+
+
