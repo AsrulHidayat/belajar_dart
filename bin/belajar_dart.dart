@@ -2365,28 +2365,62 @@ import 'package:belajar_dart/belajar_dart.dart' as belajar_dart;
 //   });
 // }
 
-// Contoh 3 Future : When Completed 
+// Contoh 3 Future : When Completed
 
-void main() {
-  getOrder().then((value) {
-    print('Your ordered: $value');
-  }).catchError((error) {
-    print('Sorry. $error');
-  }).whenComplete(() {
-    print('Thank you');
-  });
+// void main() {
+//   getOrder().then((value) {
+//     print('Your ordered: $value');
+//   }).catchError((error) {
+//     print('Sorry. $error');
+//   }).whenComplete(() {
+//     print('Thank you');
+//   });
+//   print('Getting your order...');
+// }
+//
+// Future<String> getOrder() {
+//   return Future.delayed(Duration(seconds: 3), () {
+//     var isStockAvailable = false;
+//     if (isStockAvailable) {
+//       return 'Coffee Boba';
+//     } else {
+//       throw 'Our stock is not enough.';
+//     }
+//   });
+// }
+
+
+// Contoh async-await
+
+// void main() async { // penambahan async
+//   print('Getting your order...');
+//   var order = await getOrder(); // penambahan await
+//   print('You order: $order');
+// }
+//
+// Future<String> getOrder() {
+//   return Future.delayed(Duration(seconds: 3), () {
+//     return 'Coffee Boba';
+//   });
+// }
+
+
+// Contoh jika terjadi error pada async-await
+
+void main() async {
   print('Getting your order...');
+  try {
+    var order = await getOrder();
+    print('You order: $order');
+  } catch (error) {
+    print('Sorry. $error');
+  } finally {
+    print('Thank you');
+  }
 }
 
 Future<String> getOrder() {
   return Future.delayed(Duration(seconds: 3), () {
-    var isStockAvailable = false;
-    if (isStockAvailable) {
-      return 'Coffee Boba';
-    } else {
-      throw 'Our stock is not enough.';
-    }
+    return 'Coffee Boba';
   });
 }
-
-

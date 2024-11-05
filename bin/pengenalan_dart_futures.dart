@@ -116,3 +116,40 @@ Future<String> getOrder(){  // nilai yang dikembalikan pada Future berupa String
 //     }
 //   });
 // }
+
+
+// 3. Future dengan async-await
+
+void main() async { // penambahan async
+  print('Getting your order...');
+  var order = await getOrder(); // penambahan await
+  print('You order: $order');
+}
+
+Future<String> getOrder() {
+  return Future.delayed(Duration(seconds: 3), () {
+    return 'Coffee Boba';
+  });
+}
+
+// penambahan async-await ini dinamakan proses asynchronous dengan gaya synchronous.
+
+// jika terjadi error kita dapat memanfaatkan try-catch
+
+void main() async {
+  print('Getting your order...');
+  try {
+    var order = await getOrder();
+    print('You order: $order');
+  } catch (error) {
+    print('Sorry. $error');
+  } finally {
+    print('Thank you');
+  }
+}
+
+Future<String> getOrder() {
+  return Future.delayed(Duration(seconds: 3), () {
+    return 'Coffee Boba';
+  });
+}
