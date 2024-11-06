@@ -127,7 +127,7 @@
 //   }
 // }
 
-/// CONSIDER making the code read like a sentence.
+/// 3.5 CONSIDER making the code read like a sentence.
 
 // Penamaan dalam kode baik itu nama variabel, fungsi, maupun lainnya adalah hal yang sangat penting namun juga tidak mudah. Sebagai solusi kita bisa membayangkannya seolah sedang membuat kalimat.
 
